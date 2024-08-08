@@ -1,0 +1,16 @@
+[package]
+name = "apa7-student"
+version = "0.1.0"
+compiler = "0.11.1"
+entrypoint = "lib.typ"
+repository = "https://github.com/jassielof/apa7-student"
+authors = ["Jassiel Ovando <a2021117600@estudiantes.upsa.edu.bo>"]
+license = "MIT"
+description = "A quick-start and simple template for students to write papers in APA 7th edition style"
+keywords = ["APA", "APA 7th edition", "American Psychological Association", "Student", "Paper"]
+categories = ["paper"]
+disciplines = ["general, psychology, education, social sciences, humanities"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"

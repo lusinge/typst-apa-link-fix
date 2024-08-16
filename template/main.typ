@@ -2,11 +2,12 @@
 
 #show: apa7-student.with(
   title: [American Psychological Association (APA) Style Template for Student Papers],
-  author: "Author Name",
+  author: [Author Name],
   affiliation: [Affiliation Department, Name],
   due-date: datetime.today().display("[month repr:long] [day padding:none], [year]"),
   course: [Course Number: Course Name],
-  toc: true,
+  keywords: ("APA", "Style", "Template"),
+  toc: false,
 )
 
 #include "introduction.typ"

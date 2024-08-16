@@ -2,12 +2,25 @@
 
 #show: apa7-student.with(
   title: [American Psychological Association (APA) Style Template for Student Papers],
-  author: [Author Name],
+  
+  authors: [Author Name],
   affiliation: [Affiliation Department, Name],
+  course-code: [Course Code],
+  course-name: [Course Name],
+  instructor: [Instructor Name],
   due-date: datetime.today().display("[month repr:long] [day padding:none], [year]"),
-  course: [Course Number: Course Name],
-  keywords: ("APA", "Style", "Template"),
+
+  font-family: "Times New Roman",
+  font-size: 12pt,
+  region: "us",
+  language: "en",
+  paper-size: "us-letter",
+
   toc: false,
+  keywords: ("APA", "Style", "Template"),
+  abstract: [
+    #lorem(100)
+  ],
 )
 
 #include "introduction.typ"
@@ -23,7 +36,6 @@
   "./bibliography.bib",
   full: true,
   title: auto,
-  style: "apa",
 )
 
 #pagebreak()

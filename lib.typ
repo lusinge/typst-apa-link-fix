@@ -1,31 +1,17 @@
-#let author-xor-authors(author, authors) = {
-  if author != "" and authors != () {
-    panic("author and authors are mutually exclusive")
-  } else if author == "" and authors == () {
-    panic("author or authors is required")
-  }
-}
-
-#let affiliation-xor-affiliations(affiliation, affiliations) = {
-  if affiliation != [] and affiliations != () {
-    panic("affiliation and affiliations are mutually exclusive")
-  } else if affiliation == [] and affiliations == () {
-    panic("affiliation or affiliations is required")
-  }
-}
-
-#let keyword-xor-keywords(keyword, keywords) = {
-  if keyword != "" and keywords != () {
-    panic("keyword and keywords are mutually exclusive")
-  }
+#let to-string(content) = {
+  if content.has("text") {
+    content.text
+  } else if content.has("children") {
+    content.children.map(to-string).join("")
+  } else if content == [ ] {
+    " "
+  } 
 }
 
 #let apa7-student(
   title: [Paper Title],
-  author: "Author Name",
-  authors: (),
-  affiliation: [Affiliation Department, Name],
-  affiliations: (),
+  author: [],
+  affiliation: [],
   course: [Course Number: Course Name],
   instructor: [Instructor Name],
   due-date: datetime.today().display(
@@ -41,15 +27,11 @@
   toc: false,
   body,
 ) = {
-  author-xor-authors(author, authors)
-  affiliation-xor-affiliations(affiliation, affiliations)
-  keyword-xor-keywords(keyword, keywords)
-
   let double-spacing = 1.5em
 
   set document(
     title: title,
-    author: author,
+    author: to-string(author),
     keywords: keywords,
   )
 

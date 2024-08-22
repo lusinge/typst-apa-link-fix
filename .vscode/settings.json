@@ -9,13 +9,28 @@
         "emph",
         "Ervin",
         "Fernyhough",
+        "footnotesize",
         "hline",
+        "ixpt",
         "linebreak",
         "Noncoplanar",
+        "normalsize",
+        "orcid",
         "pagebreak",
         "parbreak",
         "repr",
         "rowspan",
-        "Sociodemographic"
-    ]
+        "scriptsize",
+        "Sociodemographic",
+        "viiipt",
+        "viipt",
+        "vipt",
+        "xiipt",
+        "xipt",
+        "xivpt",
+        "xviipt",
+        "xxpt",
+        "xxvpt"
+    ],
+    "cSpell.language": "en,es-ES,en-GB,en-US,de,de-DE,lorem,es"
 }

@@ -61,7 +61,7 @@
   ],
   keywords: ("APA", "template", "Typst"),
   abstract: [
-    #lorem(100)Gg
+    #lorem(100)
   ],
 
   // Common fields

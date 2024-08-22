@@ -44,9 +44,7 @@
   //   )
   // ),
   
-  custom-authors: [
-    Author Name
-  ],
+  custom-authors: [Author Name],
   custom-affiliations: [Affiliation Department, Affiliation Name],
   
   // Student-specific fields
@@ -63,7 +61,7 @@
   ],
   keywords: ("APA", "template", "Typst"),
   abstract: [
-    #lorem(100)
+    #lorem(100)Gg
   ],
 
   // Common fields
@@ -72,35 +70,36 @@
   region: "us",
   language: "es",
   paper-size: "us-letter",
+  implicit-introduction-heading: true, // wether to repeat the paper title as the introduction heading
   toc: true,
 )
 
-#include "introduction.typ"
+#include "sections/introduction.typ"
 
 #pagebreak()
-#include "lists.typ"
+#include "sections/lists.typ"
 
 #pagebreak()
-#include "quotes.typ"
+#include "sections/quotes.typ"
 
 #pagebreak()
-#include "computer-code.typ"
+#include "sections/computer-code.typ"
 
 #pagebreak()
 #bibliography(
-  "./bibliography.bib",
+  "bibliography/bibliography.bib",
   full: true,
   title: auto,
 )
 
 #pagebreak()
-#include "footnote.typ"
+#include "sections/footnote.typ"
 
 #pagebreak()
-#include "tables.typ"
+#include "sections/tables.typ"
 
 #pagebreak()
-#include "figures.typ"
+#include "sections/figures.typ"
 
 #pagebreak()
 = Appendices

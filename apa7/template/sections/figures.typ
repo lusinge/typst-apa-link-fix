@@ -5,7 +5,7 @@ Referencing @fig:sample-bar-graph.
 
 #figure(
   [
-    #image("./assets/images/sample-bar-graph.png")
+    #image("../assets/images/sample-bar-graph.png")
     #set align(left)
     _Note._
     Framing scores of adolescents and young adults are shown for low and high risks and for small, medium, and large rewards (error bars show standard errors).
@@ -19,7 +19,7 @@ Referencing @fig:sample-line-graph.
 
 #figure(
   [
-    #image("./assets/images/sample.line-graph.png")
+    #image("../assets/images/sample.line-graph.png")
     #set align(left)
     _Note._
     Mean regression slopes in Experiment 1 are shown for the stereo motion, biocularly viewed monocular motion, combined, and monocularly viewed monocular motion conditions, plotted by rotation amount. Error bars represent standard errors. From “Large Continuous Perspective Change With Noncoplanar Points Enables Accurate Slant Perception,” by X. M. Wang, M. Lind, and G. P. Bingham, 2018, Journal of Experimental Psychology: Human Perception and Performance, 44(10), p. 1513 (https://doi.org/10.1037/xhp0000553). Copyright 2018 by the American Psychological Association.
@@ -32,7 +32,7 @@ Referencing @fig:sample-consort-flowchart.
 
 #figure(
   caption: [CONSORT Flowchart of Participants],
-  image("./assets/images/sample-consort-flowchart.png"),
+  image("../assets/images/sample-consort-flowchart.png"),
 ) <fig:sample-consort-flowchart>
 
 == Sample path model
@@ -41,7 +41,7 @@ Referencing @fig:sample-path-model.
 #figure(
   caption: [Path Analysis Model of Associations Between ASMC and Body-Related Constructs],
   [
-    #image("./assets/images/sample-path-model.png")
+    #image("../assets/images/sample-path-model.png")
     #set align(left)
     _Note._
     The path analysis shows associations between ASMC and endogenous body-related variables (body esteem, body comparison, and body surveillance), controlling for time spent on social media. Coefficients presented are standardized linear regression coefficients.\
@@ -54,7 +54,7 @@ Referencing @fig:sample-qualitative-research-figure.
 
 #figure(
   caption: [Organizational Framework for Racial Microaggressions in the Workplace],
-  image("./assets/images/sample-qualitative-research-figure.png"),
+  image("../assets/images/sample-qualitative-research-figure.png"),
 ) <fig:sample-qualitative-research-figure>
 
 == Sample mixed methods research figure
@@ -62,7 +62,7 @@ Referencing @fig:sample-mixed-methods-research-figure.
 
 #figure(
   caption: [A Multistage Paradigm for Integrative Mixed Methods Research],
-  image("./assets/images/sample-mixed-methods-research-figure.png"),
+  image("../assets/images/sample-mixed-methods-research-figure.png"),
 ) <fig:sample-mixed-methods-research-figure>
 
 == Sample illustration of experimental stimuli
@@ -72,7 +72,7 @@ Referencing @fig:sample-stimuli.
   caption: [Examples of Stimuli Used in Experiment 1],
   [
     #image(
-      "./assets/images/sample-illustration-experimental-stimuli.png",
+      "../assets/images/sample-illustration-experimental-stimuli.png",
       alt: "Two computer-generated cartoon bees, one with two legs, a striped body, single wings, and antennae, and the other with six legs, a spotted body, double wings, and no antennae."
     )
     #set align(left)
@@ -87,7 +87,7 @@ Referencing @fig:sample-map
 #figure(
   caption: [Poverty Rate in the United States, 2017],
   [
-    #image("./assets/images/sample-map.png",
+    #image("../assets/images/sample-map.png",
       alt: "Map of the United States, with color gradients indicating percentage of people living in poverty."
     )
     #set align(left)

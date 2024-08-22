@@ -1,28 +1,6 @@
 = Computer code
 == Code block
-#set raw(
-  tab-size: 4,
-  block: true,
-)
-
-#show raw.where(block: true): block.with(
-  fill: luma(230),
-  inset: 5pt,
-  radius: 10pt,
-)
-
-#show raw: text.with(
-  font: "Lucida Console",
-  size: 10pt,
-)
-
 === Code block as a figure
-
-#show figure.where(kind: raw): it => {
-  set align(left)
-  it.caption
-  it.body
-} 
 
 #figure(
   ```py
@@ -33,12 +11,6 @@
 )
 
 === Non-figure code block
-
-// #show raw.line: it => [
-//   #box(width: 1em)[#it.number]
-//   #h(1em)
-//   #it.text
-// ]
 
 ```cs
 using System;
@@ -65,7 +37,7 @@ Console.WriteLine("Long line of code that exceeds the width of the page and need
 === Parse file content
 
 #raw(
-  read("assets/src/main.py"),
+  read("../assets/src/main.py"),
   lang: "py",
 )
 

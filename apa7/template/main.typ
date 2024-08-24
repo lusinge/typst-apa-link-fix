@@ -3,6 +3,7 @@
 #show: apa7.with(
   title: [American Psychological Association (APA) Style Template for Typst],
   
+  // // authors with different affiliations
   // authors: (
   //   (
   //     name: [Author Name 1],
@@ -43,9 +44,35 @@
   //     name: [Affiliation Department 6],
   //   )
   // ),
+
+  // authors with shared affiliations
+  authors: (
+    (
+      name: [Author Name 1],
+      affiliations: ("AF-1", "AF-2", "AF-3"),
+    ),
+    (
+      name: [Author Name 3],
+      affiliations: ("AF-1", "AF-2", "AF-3"),
+    ),
+  ),
+  affiliations: (
+    (
+      id: "AF-1",
+      name: [Affiliation Department 1],
+    ),
+    (
+      id: "AF-2",
+      name: [Affiliation Department 2],
+    ),
+    (
+      id: "AF-3",
+      name: [Affiliation Department 3],
+    )
+  ),
   
-  custom-authors: [Author Name],
-  custom-affiliations: [Affiliation Department, Affiliation Name],
+  // custom-authors: [Author Name],
+  // custom-affiliations: [Affiliation Department, Affiliation Name],
   
   // Student-specific fields
   course: [Course Code: Course Name],

@@ -37,8 +37,8 @@
 ) = {
   let double-spacing = 1.5em
 
-  authors = final-authors(authors, custom-authors)
-  affiliations = final-affiliations(affiliations, custom-affiliations)
+  authors = validate-inputs(authors, custom-authors, "author")
+  affiliations = validate-inputs(affiliations, custom-affiliations, "affiliation")
 
   set document(
     title: title,

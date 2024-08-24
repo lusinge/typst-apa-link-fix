@@ -1,18 +1,18 @@
 #import "languages.typ": *
 
-#let final-affiliations(affiliations, custom-affiliations) = {
-  if affiliations != (:) and custom-affiliations != [] {
-    panic("Affiliations and custom-affiliations cannot both be defined.")
+#let validate-inputs(data, custom-data, data-type) = {
+  if data != (:) and custom-data != [] {
+    panic(data-type + " and custom-" + data-type + " cannot both be defined.")
   }
 
-  if affiliations == (:) and (custom-affiliations == [] or custom-affiliations == none) {
-    panic("At least one affiliation must be defined.")
+  if data == (:) and (custom-data == [] or custom-data == none) {
+    panic("At least one " + data-type + " must be defined.")
   }
 
-  if affiliations != (:) {
-    affiliations
+  if data != (:) {
+    data
   } else {
-    custom-affiliations
+    custom-data
   }
 }
 
@@ -26,46 +26,18 @@
   return affiliations
 }
 
-#let final-authors(authors, custom-authors) = {
-  if authors != (:) and custom-authors != [] {
-    panic("Authors and custom-authors cannot both be defined.")
-  }
-
-  if authors == (:) and (custom-authors == [] or custom-authors == none) {
-    panic("At least one author must be defined.")
-  }
-
-  if authors != (:) {
-    authors
-  } else {
-    custom-authors
-  }
-}
-
 #let is-multiple-authors-with-different-affiliations(authors, affiliations) = {
-  // check if the authors have a different length of affiliations
-  let author-affiliations-length = authors.map(it => it.affiliations.len())
-  for i in author-affiliations-length {
-    if i != author-affiliations-length.first() {
-      return true
-    }
-  }
-
-  // if the authors have the same length of affiliations, check if the affiliations are the same
-  let seen-affiliations = ()
-  for author in authors.map(it => it.affiliations) {
-    for id in author {
-      if id not in seen-affiliations {
-        seen-affiliations.push(id)
-
-        if seen-affiliations.len() > author.len() {
-          return true
-        }
+  let unique-affiliations = ()
+  
+  for author in authors {
+    for author-affiliations in author.affiliations {
+      if author-affiliations not in unique-affiliations {
+        unique-affiliations.push(author-affiliations)
       }
     }
   }
 
-  return false
+  return unique-affiliations.len() > 1
 }
 
 #let print-authors-with-different-affiliations(authors, affiliations, language) = {
@@ -76,68 +48,30 @@
     aff-positions.insert(aff.id, str(aff.n))
   }
 
-  let upd-auth = ()
-  for auth in authors {
-    let upd-aff = ()
-    for aff in auth.affiliations {
-      upd-aff.push((
-        id: aff,
-        n: aff-positions.at(aff)
-      ))
-    }
+  let author-strings = authors.map(author => {
+    let aff-numbers = author.affiliations.map(aff => super[#aff-positions.at(aff)])
+    [#author.name#aff-numbers.join(super[, ])]
+  })
 
-    upd-auth.push((
-      name: auth.name,
-      affiliations: upd-aff
-    ))
-  }
-
-  if upd-auth.len() == 2 [
-    #upd-auth.at(0).name
-    #get-terms(language).and
-    #upd-auth.at(1).name
-  ] else {
-    for upd in upd-auth {
-      upd.name
-
-      for aff in upd.affiliations {
-        if aff != upd.affiliations.last() {
-          super[#aff.n, ]
-        } else {
-          super[#aff.n]
-        }
-      }
-
-      if upd.name == upd-auth.at(-2).name {
-        [ #get-terms(language).and ]
-      } else if upd.name == upd-auth.last().name {
-      } else {
-        [, ]
-      }
-    }
+  if author-strings.len() == 2 {
+    author-strings.join([ #get-terms(language).and ])
+  } else {
+    author-strings.join([, ], last: [, #get-terms(language).and ])
   }
 }
 
 #let print-authors(authors, affiliations, language) = {
   if type(authors) != content and type(authors) != str {
-    if authors.len() == 1 { // single author
+    if authors.len() == 1 {
       authors.at(0).name
-    } else if is-multiple-authors-with-different-affiliations(authors, affiliations) { // multiple authors with different affiliations
+    } else if is-multiple-authors-with-different-affiliations(authors, affiliations) {
       print-authors-with-different-affiliations(authors, affiliations, language)
-    } else { // multiple authors with shared affiliations
-      if authors.len() == 2 [
-        #authors.at(0).name
-        #get-terms(language).and
-        #authors.at(1).name
-      ] else {
-        let author-names = authors.map(it => it.name)
-        for i in author-names {
-          if i == author-names.last() [
-            #get-terms(language).and #i
-          ] else [
-            #i,
-          ]
-        }
+    } else {
+      let author-names = authors.map(it => it.name)
+      if author-names.len() == 2 {
+        author-names.join([ #get-terms(language).and ])
+      } else {
+        author-names.join([, ], last: [, #get-terms(language).and ])
       }
     }
   } else {
@@ -150,15 +84,15 @@
     if affiliations.len() == 1 {
       affiliations.at(0).name
     } else if is-multiple-authors-with-different-affiliations(authors, affiliations) {
-      for affiliation in enumerate-affiliations(affiliations) [
-        #super[#affiliation.n] #affiliation.name
+      enumerate-affiliations(affiliations).map(aff => [
+        #super[#aff.n] #aff.name
         #parbreak()
-      ]
+      ]).join()
     } else {
-      for aff in affiliations {
-        aff.name
-        parbreak()
-      }
+      affiliations.map(aff => [
+        #aff.name
+        #parbreak()
+      ]).join()
     }
   } else {
     affiliations

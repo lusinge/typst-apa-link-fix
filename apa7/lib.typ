@@ -2,8 +2,7 @@
 #import "utils/languages.typ": *
 #import "utils/authoring.typ": *
 #import "utils/orcid.typ": *
-
-#let apa-size = state("font-size", 11pt)
+#import "utils/addendum.typ": *
 
 #let apa7(
   title: [Paper Title],
@@ -57,8 +56,6 @@
     region: region,
     lang: language,
   )
-
-  state("font-size").update(font-size)
 
   set page(
     margin: 1in,
@@ -285,36 +282,6 @@
   if implicit-introduction-heading {
     heading(level: 1, title)
   }
-
-  body
-}
-
-#let appendix(body) = {
-  counter(heading).update(0)
-
-  show heading.where(level: 1): it => align(center)[
-    #set text(size: state("font-size").final())
-    #pagebreak()
-    #it.supplement #numbering(it.numbering, ..counter(heading).at(it.location())) #it.body
-  ]
-
-  show heading.where(level: 2): it => [
-    #set par(first-line-indent: 0in)
-    #set text(size: state("font-size").final())
-    #it.supplement
-    #numbering(it.numbering, ..counter(heading).at(it.location()))
-    #it.body
-    #parbreak()
-  ]
-
-  show heading.where(level: 3): it => [
-    #set par(first-line-indent: 0in)
-    #set text(size: state("font-size").final())
-    #it.supplement
-    #numbering(it.numbering, ..counter(heading).at(it.location()))
-    #it.body
-    #parbreak()
-  ]
 
   body
 }

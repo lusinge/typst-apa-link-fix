@@ -102,12 +102,9 @@
 #pagebreak()
 #include "sections/figures.typ"
 
-#set heading(
-  // choose heading numbering
-  numbering: "A.1.1",
-  // set your language
-  // choose wether to use "Appendix" or "Annex"
-  supplement: get-terms("en").Appendix,
+#show: addendum.with(
+  heading-numbering: "A.1.1.",
+  supplement: "Appendix",
 )
-#show: appendix
+
 #include "sections/appendix.typ"

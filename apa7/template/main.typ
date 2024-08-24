@@ -50,6 +50,7 @@
   // Student-specific fields
   course: [Course Code: Course Name],
   instructor: [Instructor Name],
+  // At the moment only supports English
   due-date: datetime.today().display(),
 
   // Professional-specific fields
@@ -68,7 +69,7 @@
   font-family: "Linux Libertine",
   font-size: 12pt,
   region: "us",
-  language: "es",
+  language: "en",
   paper-size: "us-letter",
   implicit-introduction-heading: true, // wether to repeat the paper title as the introduction heading
   toc: true,
@@ -101,18 +102,12 @@
 #pagebreak()
 #include "sections/figures.typ"
 
-#pagebreak()
-= Appendices
-#lorem(50)
-
-#pagebreak()
-#outline(
-  title: [List of figures],
-  target: figure.where(kind: image),
+#set heading(
+  // choose heading numbering
+  numbering: "A.1.1",
+  // set your language
+  // choose wether to use "Appendix" or "Annex"
+  supplement: get-terms("en").Appendix,
 )
-
-#pagebreak()
-#outline(
-  title: [List of tables],
-  target: figure.where(kind: table),
-)
+#show: appendix
+#include "sections/appendix.typ"

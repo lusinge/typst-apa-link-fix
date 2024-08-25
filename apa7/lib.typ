@@ -133,23 +133,21 @@
     #pagebreak()
   ]
 
-  show heading: it => locate(loc => {
-    set block(spacing: double-spacing)
-    set text(size: font-size)
-    if it.level == 1 {
-      align(center, strong(it.body))
-    } else if it.level == 2 {
-      par(first-line-indent: 0in, strong(it.body))
-    } else if it.level == 3 {
-      par(first-line-indent: 0in, emph(strong(it.body)))
-    } else if it.level == 4 {
-      strong(it.body) + "."
-    } else if it.level == 5 {
-      emph(strong(it.body)) + "."
-    } else {
-      panic("Invalid heading: ", it, it.level)
-    }
-  })
+  show heading: set text(size: font-size)
+  show heading: set block(spacing: double-spacing)
+
+  show heading: it => emph(strong[#it.body.])
+  show heading.where(level: 1): it => align(center, strong(it.body))
+  show heading.where(level: 2): it => par(
+    first-line-indent: 0in, strong(it.body)
+  )
+
+  show heading.where(level: 3): it => par(
+    first-line-indent: 0in, emph(strong(it.body))
+  )
+
+  show heading.where(level: 4): it => strong[#it.body.]
+  show heading.where(level: 5): it => emph(strong[#it.body.])
 
   set par(
     first-line-indent: 0.5in,

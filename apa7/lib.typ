@@ -158,6 +158,11 @@
     position: top
   )
 
+  show figure: it => {
+    it.caption
+    align(center, it.body)
+  }
+
   set figure(
     gap: 1.5em,
     placement: none

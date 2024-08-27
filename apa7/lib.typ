@@ -182,7 +182,7 @@
   )
 
   set list(
-    marker: (text(size: 1.25em)[•], [‣], [–]),
+    marker: (text(size: 1em)[•], [◦]),
     indent: 0.5in - 1.75em,
     body-indent: 1.3em,
   )

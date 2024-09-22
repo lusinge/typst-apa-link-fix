@@ -79,6 +79,13 @@
     spacing: double-spacing,
   )
 
+  show link: set text(
+    fill: blue,
+  )
+
+  show link: it => {
+    underline(it.body)
+  }
 
   if running-head != none and running-head != [] and running-head != "" {
     if to-string(running-head).len() > 50 {

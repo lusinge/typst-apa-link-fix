@@ -1,8 +1,8 @@
 #import "../utils/to-string.typ": *
 #import "utils/languages.typ": *
-#import "utils/authors.typ": *
-#import "utils/affiliations.typ": *
+#import "utils/authoring.typ": *
 #import "utils/orcid.typ": *
+#import "utils/addendum.typ": *
 
 #let apa7(
   title: [Paper Title],
@@ -37,8 +37,8 @@
 ) = {
   let double-spacing = 1.5em
 
-  authors = final-authors(authors, custom-authors)
-  affiliations = final-affiliations(affiliations, custom-affiliations)
+  authors = validate-inputs(authors, custom-authors, "author")
+  affiliations = validate-inputs(affiliations, custom-affiliations, "affiliation")
 
   set document(
     title: title,
@@ -140,25 +140,21 @@
     #pagebreak()
   ]
 
-  show heading: it => {
-    if it.level == 1 {
-      set align(center)
-      set par(first-line-indent: 0in)
-      text(size: font-size, weight: "bold", it.body)
-    } else if it.level ==  2 {
-      set par(first-line-indent: 0in)
-      text(size: font-size, weight: "bold", it.body)
-    } else if it.level ==  3 {
-      set par(first-line-indent: 0in)
-      text(size: font-size, style: "italic", weight: "bold", it.body)
-    } else if it.level ==  4 {
-      text(size: font-size, weight: "bold")[#it.body] + "."
-    } else if it.level ==  5 {
-      text(size: font-size, style: "italic", weight: "bold")[#it.body] + "."
-    } else {
-      panic("Invalid heading level: ", it.level)
-    }
-  }
+  show heading: set text(size: font-size)
+  show heading: set block(spacing: double-spacing)
+
+  show heading: it => emph(strong[#it.body.])
+  show heading.where(level: 1): it => align(center, strong(it.body))
+  show heading.where(level: 2): it => par(
+    first-line-indent: 0in, strong(it.body)
+  )
+
+  show heading.where(level: 3): it => par(
+    first-line-indent: 0in, emph(strong(it.body))
+  )
+
+  show heading.where(level: 4): it => strong[#it.body.]
+  show heading.where(level: 5): it => emph(strong[#it.body.])
 
   set par(
     first-line-indent: 0.5in,
@@ -168,6 +164,11 @@
   show figure: set figure.caption(
     position: top
   )
+
+  show figure: it => {
+    it.caption
+    align(center, it.body)
+  }
 
   set figure(
     gap: 1.5em,
@@ -188,7 +189,7 @@
   )
 
   set list(
-    marker: (text(size: 1.25em)[•], [‣], [–]),
+    marker: ([•], [◦]),
     indent: 0.5in - 1.75em,
     body-indent: 1.3em,
   )

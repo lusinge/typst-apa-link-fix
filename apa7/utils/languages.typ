@@ -6,6 +6,7 @@
       "Abstract": "Abstract",
       "Keywords": "Keywords",
       "Appendix": "Appendix",
+      "Annex": "Annex",
     )
   } else if language == "es" {
     (
@@ -14,6 +15,7 @@
       "Abstract": "Resumen",
       "Keywords": "Palabras clave",
       "Appendix": "Apéndice",
+      "Annex": "Anexo",
     )
   } else if language == "de" {
     (
@@ -22,6 +24,7 @@
       "Abstract": "Zusammenfassung",
       "Keywords": "Schlüsselwörter",
       "Appendix": "Anhang",
+      "Annex": "Anhang",
     )
   } else if language == "pt" {
     (
@@ -30,6 +33,7 @@
       "Abstract": "Resumo",
       "Keywords": "Palavras-chave",
       "Appendix": "Apêndice",
+      "Annex": "Anexo",
     )
   } else {
     panic("Unsupported language:", language)

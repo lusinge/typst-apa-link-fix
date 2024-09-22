@@ -3,6 +3,7 @@
 #show: apa7.with(
   title: [American Psychological Association (APA) Style Template for Typst],
   
+  // // authors with different affiliations
   // authors: (
   //   (
   //     name: [Author Name 1],
@@ -43,13 +44,40 @@
   //     name: [Affiliation Department 6],
   //   )
   // ),
+
+  // authors with shared affiliations
+  authors: (
+    (
+      name: [Author Name 1],
+      affiliations: ("AF-1", "AF-2", "AF-3"),
+    ),
+    (
+      name: [Author Name 3],
+      affiliations: ("AF-1", "AF-2", "AF-3"),
+    ),
+  ),
+  affiliations: (
+    (
+      id: "AF-1",
+      name: [Affiliation Department 1],
+    ),
+    (
+      id: "AF-2",
+      name: [Affiliation Department 2],
+    ),
+    (
+      id: "AF-3",
+      name: [Affiliation Department 3],
+    )
+  ),
   
-  custom-authors: [Author Name],
-  custom-affiliations: [Affiliation Department, Affiliation Name],
+  // custom-authors: [Author Name],
+  // custom-affiliations: [Affiliation Department, Affiliation Name],
   
   // Student-specific fields
   course: [Course Code: Course Name],
   instructor: [Instructor Name],
+  // At the moment only supports English
   due-date: datetime.today().display(),
 
   // Professional-specific fields
@@ -68,7 +96,7 @@
   font-family: "Linux Libertine",
   font-size: 12pt,
   region: "us",
-  language: "es",
+  language: "en",
   paper-size: "us-letter",
   implicit-introduction-heading: true, // wether to repeat the paper title as the introduction heading
   toc: true,
@@ -101,18 +129,9 @@
 #pagebreak()
 #include "sections/figures.typ"
 
-#pagebreak()
-= Appendices
-#lorem(50)
-
-#pagebreak()
-#outline(
-  title: [List of figures],
-  target: figure.where(kind: image),
+#show: addendum.with(
+  heading-numbering: "A.1.1.",
+  supplement: "Appendix",
 )
 
-#pagebreak()
-#outline(
-  title: [List of tables],
-  target: figure.where(kind: table),
-)
+#include "sections/appendix.typ"

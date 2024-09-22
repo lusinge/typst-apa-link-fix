@@ -1,12 +1,46 @@
-\documentclass[]{article}
+\documentclass[titlepage]{article}
 
+\usepackage{lipsum}
+\setlipsum{auto-lang=false}
+
+
+
+\begin{document}
 \title{Paper Title}
 \author{Author Name}
 \date{\today}
 
-
-\begin{document}
 \maketitle
+
 \tableofcontents
+
+\begin{abstract}
+\lipsum[1]
+\lipsum[]
+\end{abstract}
+
+\section{Introduction}
+\lipsum[0]
+
+\subsection{Subsection 1}
+\lipsum[1]
+
+\section{Conclusion}
+\lipsum[10]
+
+\subsection{Subsection 2}
+\lipsum[13]
+
+\subsubsection{Subsubsection 1}
+\lipsum[16]
+
+\paragraph{Paragraph 1}
+\lipsum[20]
+
+\subparagraph{Subparagraph 1}
+\lipsum[22]
+
+\section{References}
+\lipsum[25]
 
 \end{document}

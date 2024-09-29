@@ -1,19 +1,20 @@
 #let font-sizes = (
-  vpt: 5,
-  vipt: 6,
-  viipt: 7,
-  viiipt: 8,
-  ixpt: 9,
-  xpt: 10,
-  xipt: 10.95,
-  xiipt: 12,
-  xivpt: 14.4,
-  xviipt: 17.28,
-  xxpt: 20.74,
-  xxvpt: 24.88
+  vpt: 5pt,
+  vipt: 6pt,
+  viipt: 7pt,
+  viiipt: 8pt,
+  ixpt: 9pt,
+  xpt: 10pt,
+  xipt: 10.95pt,
+  xiipt: 12pt,
+  xivpt: 14.4pt,
+  xviipt: 17.28pt,
+  xxpt: 20.74pt,
+  xxvpt: 24.88pt
 )
 
 #let font-10pt = (
+  margin: 1.875in,
   tiny: font-sizes.vpt,
   scriptsize: font-sizes.viipt,
   footnotesize: font-sizes.viiipt,
@@ -27,6 +28,7 @@
 )
 
 #let font-11pt = (
+  margin: 1.75in,
   tiny: font-sizes.vipt,
   scriptsize: font-sizes.viiipt,
   footnotesize: font-sizes.ixpt,
@@ -40,6 +42,7 @@
 )
 
 #let font-12pt = (
+  margin: 1.5in,
   tiny: font-sizes.vipt,
   scriptsize: font-sizes.viiipt,
   footnotesize: font-sizes.xpt,

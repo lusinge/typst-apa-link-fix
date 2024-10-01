@@ -20,7 +20,6 @@
     keywords: ("Estudio de Factibilidad", "UPSA"),
   )
 
-
   set page(
     margin: (
       left: 4cm,
@@ -33,8 +32,8 @@
   )
 
   set text(
-    size: 11pt,
-    font: "New Computer Modern",
+    size: 12pt,
+    font: "Times New Roman",
     lang: "es",
     region: "bo",
   )
@@ -54,7 +53,7 @@
     it
   }
 
-  show heading: set text(size: 11pt)
+  show heading: set text(size: 12pt)
   show heading: set block(spacing: 2em)
   show heading: set par(leading: 1.5em)
 

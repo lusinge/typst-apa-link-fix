@@ -227,22 +227,27 @@
   show quote: it => {
     let quote-text = to-string(it.body)
     let quote-text-words = to-string(it.body).split(" ").len()
-    let quote-attribution = to-string(it.attribution)
-    if quote-attribution.first() != "(" and quote-attribution.last() != ")" {
-      quote-attribution = "(" + quote-attribution + ")"
+    let quote-attribution = it.attribution
+
+    if (type(it.attribution) != label) {
+      let quote-attribution = to-string(it.attribution)
+
+      if quote-attribution.first() != "(" and quote-attribution.last() != ")" {
+        quote-attribution = "(" + quote-attribution + ")"
+      }
     }
 
     if quote-text-words <= 40 {
       set quote(block: false)
       [
-        "#quote-text.trim(" ", at: start).trim(" ", at: end)"
+        "#quote-text.trim(" ")"
         #quote-attribution.
       ]
     } else {
       set quote(block: true)
       set par(hanging-indent: 0.5in)
       [
-        #quote-text.trim(" ", at: start).trim(" ", at: end)
+        #quote-text.trim(" ")
         #quote-attribution
       ]
     }

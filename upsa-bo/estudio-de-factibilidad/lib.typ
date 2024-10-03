@@ -10,7 +10,6 @@
   docente: [],
   abstracto: [],
   resumen-ejecutivo: [],
-  bibliografía: "",
 
   body,
 ) = {
@@ -44,6 +43,18 @@
 
   show par: set block(
     spacing: 2em,
+  )
+
+  show quote: set par(
+    leading: 1.5em,
+  )
+
+  show quote: set block(
+    spacing: 2em,
+  )
+
+  show quote: set pad(
+    left: 0.5in,
   )
 
   set heading(numbering: "1.")
@@ -95,11 +106,17 @@
 
   set page(numbering: "i")
 
-  heading([Abstracto], numbering: none)
-  abstracto
+  if ((type(abstracto) == content and abstracto != [])
+    or (type(abstracto) == str and abstracto != "")) {
+    heading([Abstracto], numbering: none)
+    abstracto
+  }
 
-  heading([Resumen Ejecutivo], numbering: none)
-  resumen-ejecutivo
+  if ((type(resumen-ejecutivo) == content and resumen-ejecutivo != [])
+    or (type(resumen-ejecutivo) == str and resumen-ejecutivo != "")) {
+    heading([Resumen Ejecutivo], numbering: none)
+    resumen-ejecutivo
+  }
 
   {
     show outline.entry.where(level: 1): it => strong(it)

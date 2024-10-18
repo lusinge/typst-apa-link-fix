@@ -1,3 +1,4 @@
+// #import "@preview/apa7:0.1.0": *
 #import "../lib.typ": *
 
 #show: apa7.with(

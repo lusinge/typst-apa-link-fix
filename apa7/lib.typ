@@ -165,6 +165,10 @@
     position: top
   )
 
+  show figure: set block(
+    breakable: true
+  )
+
   show figure: it => {
     it.caption
     align(center, it.body)

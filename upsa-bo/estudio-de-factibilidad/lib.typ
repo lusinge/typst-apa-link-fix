@@ -32,13 +32,42 @@
 
   set text(
     size: 12pt,
-    font: "Times New Roman",
+    font: "Linux Libertine",
     lang: "es",
     region: "bo",
   )
 
   set par(
     leading: 1.5em,
+  )
+
+  set math.equation(numbering: "(1)", supplement: [Ecuación])
+
+  show figure: set figure.caption(
+    position: top
+  )
+
+  show figure: it => {
+    it.caption
+    align(center, it.body)
+  }
+
+  set figure(
+    gap: 1.5em,
+    placement: none
+  )
+
+  show figure.caption: it => {
+    set par(first-line-indent: 0in)
+    align(left)[
+      *#it.supplement #it.counter.display(it.numbering)*
+
+      #emph(it.body)
+    ]
+  }
+
+  show figure: set block(
+    breakable: true
   )
 
   show par: set block(
@@ -82,7 +111,7 @@
 
     #v(1fr)
 
-    #rect(radius: 20%, inset: 10pt)[_«#título»_]
+    #rect(radius: 20%, inset: 10pt)[_"#título"_]
 
     #v(1fr)
 
@@ -97,10 +126,11 @@
 
   portada
 
-  pagebreak()
-  pagebreak()
-
+  pagebreak(to: "odd")
+  
   portada
+
+  pagebreak(weak: false)
 
   counter(page).update(0)
 
@@ -178,17 +208,13 @@
 
       show par: set block(spacing: 1.5em)
       
-      v(0.4fr)
-      
-      align(center)[
+      align(center + horizon)[
         #text(
           size: 2.25em
         )[#it.supplement #counter(heading).display("I").trim(".")]
 
         #text(size: 2.75em)[#it.body]
       ]
-
-      v(0.6fr)
     }
 
     it
@@ -212,17 +238,13 @@
 
       show par: set block(spacing: 1.5em)
       
-      v(0.4fr)
-      
-      align(center)[
+      align(center + horizon)[
         #text(
           size: 2.25em
         )[#it.supplement #counter(heading).display().trim(".")]
 
         #text(size: 2.75em)[#it.body]
       ]
-      
-      v(0.6fr)
     }
 
     it

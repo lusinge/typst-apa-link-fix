@@ -45,7 +45,6 @@
 
 #{
   show outline.entry.where(level: 1): it => strong(it)
-
   show outline.entry.where(level: 2): it => strong(emph(it))
   show outline.entry.where(level: 3): it => emph(it)
 

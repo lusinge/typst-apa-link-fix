@@ -25,3 +25,5 @@ git submodule add https://github.com/jassielof/typst-templates.git template
 This will let you update the template by running `git submodule update --remote --merge` inside the `template/` directory.
 And also upload your project as a git repository without any conflicts.
 The repository will appear as a reference git repository in your project.
+
+### Typst Universe

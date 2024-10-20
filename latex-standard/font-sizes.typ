@@ -14,7 +14,12 @@
 )
 
 #let font-10pt = (
-  margin: 1.875in,
+  margin: (
+    top: 1.725in,
+    bottom: 1.65in,
+    left: 1.85in,
+    right: 1.865in,
+  ),
   tiny: font-sizes.vpt,
   scriptsize: font-sizes.viipt,
   footnotesize: font-sizes.viiipt,

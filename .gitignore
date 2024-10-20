@@ -1,4 +1,9 @@
+# Output files
 *.pdf
+*.png
+!thumbnail.png
+
+# LaTeX
 *.aux
 *.log
 *.out

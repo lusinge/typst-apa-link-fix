@@ -7,7 +7,7 @@
 === Métodos de Toma de Muestra
 === Equipos para el Análisis
 === Atributos de Aceptación
-== Procesos de Transporte Manipuleo y Almacenamiento
+== Procesos de Transporte, Manipuleo y Almacenamiento
 === Transporte
 === Manipuleo
 === Almacenamiento

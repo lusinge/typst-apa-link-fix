@@ -32,7 +32,7 @@
 
   set text(
     size: 12pt,
-    font: "Linux Libertine",
+    font: "Libertinus Serif",
     lang: "es",
     region: "bo",
   )
@@ -60,7 +60,7 @@
   show figure.caption: it => {
     set par(first-line-indent: 0in)
     align(left)[
-      *#it.supplement #it.counter.display(it.numbering)*
+      *#it.supplement #context it.counter.display(it.numbering)*
 
       #emph(it.body)
     ]
@@ -70,15 +70,12 @@
     breakable: true
   )
 
-  show par: set block(
+  set par(
     spacing: 2em,
   )
 
   show quote: set par(
     leading: 1.5em,
-  )
-
-  show quote: set block(
     spacing: 2em,
   )
 
@@ -206,12 +203,14 @@
         header: none,
       )
 
-      show par: set block(spacing: 1.5em)
+      set par(
+        spacing: 1.5em,
+      )
       
       align(center + horizon)[
         #text(
           size: 2.25em
-        )[#it.supplement #counter(heading).display("I").trim(".")]
+        )[#it.supplement #context counter(heading).display("I").trim(".")]
 
         #text(size: 2.75em)[#it.body]
       ]
@@ -236,7 +235,9 @@
         header: none,
       )
 
-      show par: set block(spacing: 1.5em)
+      set par(
+        spacing: 1.5em,
+      )
       
       align(center + horizon)[
         #text(

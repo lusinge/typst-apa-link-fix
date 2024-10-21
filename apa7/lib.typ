@@ -25,8 +25,8 @@
   abstract: [],
 
   // Common fields
-  font-family: "New Computer Modern",
-  font-size: 11pt,
+  font-family: "Libertinus Serif",
+  font-size: 12pt,
   region: "us",
   language: "en",
   paper-size: "us-letter",
@@ -43,9 +43,9 @@
   set document(
     title: title,
     author: if type(authors) == array {
-      authors.map(it => to-string(it.name))
+      authors.map(it => plain-text(it.name))
     } else {
-      to-string(authors).trim(" ", at: start).trim(" ", at: end)
+      plain-text(authors).trim(" ", at: start).trim(" ", at: end)
     },
     keywords: keywords,
   )
@@ -62,20 +62,15 @@
     paper: paper-size,
     numbering: "1",
     number-align: top + right,
-    header: locate(loc => {
+    header: context {
       upper(running-head)
-      
       h(1fr)
-      
-      str(counter(page).at(loc).first())
-    })
+      str(here().page())
+    }
   )
 
   set par(
     leading: double-spacing,
-  )
-
-  show par: set block(
     spacing: double-spacing,
   )
 
@@ -88,7 +83,7 @@
   }
 
   if running-head != none and running-head != [] and running-head != "" {
-    if to-string(running-head).len() > 50 {
+    if plain-text(running-head).len() > 50 {
       panic("Running head must be no more than 50 characters, including spaces and punctuation.")
     }
   }
@@ -182,7 +177,7 @@
   show figure.caption: it => {
     set par(first-line-indent: 0in)
     align(left)[
-      *#it.supplement #it.counter.display(it.numbering)*
+      *#it.supplement #context it.counter.display(it.numbering)*
 
       #emph(it.body)
     ]
@@ -229,12 +224,12 @@
   show quote: set block(spacing: 1.5em)
 
   show quote: it => {
-    let quote-text = to-string(it.body)
-    let quote-text-words = to-string(it.body).split(" ").len()
+    let quote-text = plain-text(it.body)
+    let quote-text-words = plain-text(it.body).split(" ").len()
     let quote-attribution = it.attribution
 
     if (type(it.attribution) != label) {
-      let quote-attribution = to-string(it.attribution)
+      let quote-attribution = plain-text(it.attribution)
 
       if quote-attribution.first() != "(" and quote-attribution.last() != ")" {
         quote-attribution = "(" + quote-attribution + ")"

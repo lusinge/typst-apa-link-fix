@@ -94,7 +94,7 @@
   ],
 
   // Common fields
-  font-family: "Linux Libertine",
+  font-family: "Libertinus Serif",
   font-size: 12pt,
   region: "us",
   language: "en",

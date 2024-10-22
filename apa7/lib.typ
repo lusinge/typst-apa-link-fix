@@ -226,12 +226,11 @@
   show quote: it => {
     let quote-text = plain-text(it.body)
     let quote-text-words = plain-text(it.body).split(" ").len()
-    let quote-attribution = it.attribution
 
     if quote-text-words <= 40 {
       set quote(block: false)
       [
-        "#quote-text.trim(" ")"~#quote-attribution.
+        "#quote-text.trim(" ")"~#it.attribution.
       ]
     } else {
       set quote(block: true)

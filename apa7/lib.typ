@@ -228,26 +228,16 @@
     let quote-text-words = plain-text(it.body).split(" ").len()
     let quote-attribution = it.attribution
 
-    if (type(it.attribution) != label) {
-      let quote-attribution = plain-text(it.attribution)
-
-      if quote-attribution.first() != "(" and quote-attribution.last() != ")" {
-        quote-attribution = "(" + quote-attribution + ")"
-      }
-    }
-
     if quote-text-words <= 40 {
       set quote(block: false)
       [
-        "#quote-text.trim(" ")"
-        #quote-attribution.
+        "#quote-text.trim(" ")"~#quote-attribution.
       ]
     } else {
       set quote(block: true)
       set par(hanging-indent: 0.5in)
       [
-        #quote-text.trim(" ")
-        #quote-attribution
+        #quote-text.trim(" ")~#it.attribution
       ]
     }
   }

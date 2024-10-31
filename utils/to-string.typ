@@ -4,7 +4,11 @@
   return if func in (parbreak, pagebreak, linebreak) {
     "\n"
   } else if func == smartquote {
-    if it.double { "\"" } else { "'" } // "
+    if it.double {
+      "\""
+    } else {
+      "'"
+    } // "
   } else if it.fields() == (:) {
     // a fieldless element is either specially represented (and caught earlier) or doesn't have text
     ""
@@ -31,5 +35,15 @@
   } else {
     // remove this to ignore all other non-text elements
     stringify-by-func(it)
+  }
+}
+
+#let to-string(content) = {
+  if content.has("text") {
+    content.text
+  } else if content.has("children") {
+    content.children.map(to-string).join("")
+  } else if content == [ ] {
+    " "
   }
 }

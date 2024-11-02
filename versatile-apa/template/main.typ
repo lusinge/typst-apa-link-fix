@@ -1,5 +1,4 @@
-// #import "@preview/apa7:0.1.0": *
-#import "../lib.typ": *
+#import "@preview/versatile-apa:7.0.0": *
 
 #show: versatile-apa.with(
   title: [American Psychological Association (APA) Style Template for Typst],
@@ -119,7 +118,7 @@
 
 #pagebreak()
 #bibliography(
-  "bibliography/ref.bib",
+  "bibliography/ref.bib", // or ref.yml
   full: true,
   title: auto,
 )

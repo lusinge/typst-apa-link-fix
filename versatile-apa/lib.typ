@@ -5,16 +5,16 @@
 #import "utils/addendum.typ": *
 
 // The APA 7th edition template for academic and professional documents.
-#let apa7(
+#let versatile-apa(
   // The title of your document.
   title: [Paper Title],
 
   // Authoring fields
-  
+
   // The authors of the document.
   // For each author you must specify their name and their affiliations.
   authors: (:),
-  
+
   // The affiliations of the authors.
   // For each affiliation you must specify its ID and its name.
   affiliations: (:),
@@ -28,7 +28,7 @@
   custom-affiliations: [],
 
   // Student-specific fields
-  
+
   // The academic course for the document.
   course: [],
 
@@ -39,13 +39,13 @@
   due-date: [],
 
   // Professional-specific fields
-  
+
   // Running head for the document.
   running-head: [],
 
   // Author notes for the document.
   author-notes: [],
-  
+
   // Keywords for the document metadata and abstract.
   keywords: (),
 
@@ -78,7 +78,7 @@
   // Wether to include or skip the paper title at the top of the first page of the text
   // which acts as a de facto Level 1 heading.
   implicit-introduction-heading: true,
-  
+
   // Wether to include a table of contents at the beginning of the document.
   toc: false,
 
@@ -117,7 +117,7 @@
       upper(running-head)
       h(1fr)
       str(here().page())
-    }
+    },
   )
 
   set par(
@@ -125,9 +125,7 @@
     spacing: double-spacing,
   )
 
-  show link: set text(
-    fill: blue,
-  )
+  show link: set text(fill: blue)
 
   show link: it => {
     underline(it.body)
@@ -147,7 +145,7 @@
     #strong(title)
 
     ~
-    
+
     #parbreak()
 
     #print-authors(authors, affiliations, language)
@@ -192,11 +190,13 @@
   show heading: it => emph(strong[#it.body.])
   show heading.where(level: 1): it => align(center, strong(it.body))
   show heading.where(level: 2): it => par(
-    first-line-indent: 0in, strong(it.body)
+    first-line-indent: 0in,
+    strong(it.body),
   )
 
   show heading.where(level: 3): it => par(
-    first-line-indent: 0in, emph(strong(it.body))
+    first-line-indent: 0in,
+    emph(strong(it.body)),
   )
 
   show heading.where(level: 4): it => strong[#it.body.]
@@ -207,17 +207,11 @@
     leading: double-spacing,
   )
 
-  show figure: set figure.caption(
-    position: top
-  )
+  show figure: set figure.caption(position: top)
 
-  show table.cell: set par(
-    leading: 1em,
-  )
+  show table.cell: set par(leading: 1em)
 
-  show figure: set block(
-    breakable: true
-  )
+  show figure: set block(breakable: true)
 
   show figure: it => {
     it.caption
@@ -226,7 +220,7 @@
 
   set figure(
     gap: double-spacing,
-    placement: none
+    placement: none,
   )
 
   show figure.caption: it => {
@@ -238,9 +232,7 @@
     ]
   }
 
-  set table(
-    stroke: none,
-  )
+  set table(stroke: none)
 
   set list(
     marker: ([•], [◦]),
@@ -266,16 +258,12 @@
 
   show raw: text.with(
     font: "Lucida Console",
-    size: 10pt
+    size: 10pt,
   )
 
-  show raw: set par(
-    leading: 1em
-  )
+  show raw: set par(leading: 1em)
 
-  set math.equation(
-    numbering: "(1)"
-  )
+  set math.equation(numbering: "(1)")
 
   show figure.where(kind: raw): it => {
     set align(left)
@@ -304,9 +292,7 @@
     }
   }
 
-  set bibliography(
-    style: "apa",
-  )
+  set bibliography(style: "apa")
 
   if (toc) {
     show outline.entry.where(level: 1): it => {
@@ -324,7 +310,7 @@
     show outline.entry.where(level: 4): it => {
       it
     }
-    
+
     outline(indent: 2em, depth: 4)
     pagebreak()
   }
@@ -339,7 +325,7 @@
     emph(get-terms(language).Keywords)
     [: ]
     keywords.map(it => it).join(", ")
-    
+
     pagebreak()
   } else if (type(abstract) != content) {
     panic("Invalid abstract type, must of type content: ", type(abstract))

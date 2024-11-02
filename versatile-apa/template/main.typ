@@ -1,7 +1,7 @@
 // #import "@preview/apa7:0.1.0": *
 #import "../lib.typ": *
 
-#show: apa7.with(
+#show: versatile-apa.with(
   title: [American Psychological Association (APA) Style Template for Typst],
 
   // // authors with different affiliations

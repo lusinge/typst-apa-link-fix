@@ -1,0 +1,199 @@
+Borst2011a:
+  type: article
+  title: A fictitious entry to demonstrate complicated bibliographies
+  author:
+  - Borst, Grégoire
+  - Kosslyn, Stephen M.
+  - Kievit, Rogier A.
+  - Thompson, William L.
+  date: 2011
+  page-range: 2-3
+  parent:
+    type: periodical
+    title: Journal of Nothingness
+    volume: 1
+Borst2011b:
+  type: article
+  title: Mental rotation is not easily cognitively penetrable
+  author:
+  - Borst, Grégoire
+  - Kievit, Rogier A.
+  - Thompson, William L.
+  - Kosslyn, Stephen M.
+  date: 2011
+  page-range: 60-75
+  parent:
+    type: periodical
+    title: Journal of Cognitive Psychology
+    volume: 23
+Borst2011c:
+  type: article
+  title: 'Understanding the dorsal and ventral systems of the human cerebral cortex: {B}eyond dichotomies'
+  author:
+  - Borst, Grégoire
+  - Thompson, William L.
+  - Kosslyn, Stephen M.
+  date: 2011
+  page-range: 624-632
+  parent:
+    type: periodical
+    title: American Psychologist
+    volume: 66
+deWaal2009:
+  type: article
+  title: 'Safety and security at school: {A} pedagogical perspective'
+  author:
+  - name: Waal
+    given-name: Elda
+    prefix: de
+  - Grosser, M. M.
+  date: 2009
+  page-range: 697-706
+  parent:
+    type: periodical
+    title: Teaching and Teacher Education
+    volume: 25
+Franklin2010:
+  type: article
+  title: 'The two sides of beauty: {L}aterality and the duality of facial attractiveness'
+  author:
+  - Franklin, Robert G., Jr.
+  - Adams, Reginald B., Jr.
+  date: 2010
+  page-range: 300-305
+  parent:
+    type: periodical
+    title: Brain and Cognition
+    volume: 72
+Gilbert2004:
+  type: article
+  title: Effects of quitting smoking on {EEG} activation and attention last for more than 31 days and are more severe with stress, dependence, {DRD2 A1} allele, and depressive traits
+  author:
+  - Gilbert, David
+  - McClernon, Joseph
+  - Rabinovich, Norka
+  - Sugai, Chihiro
+  - Plath, Louisette
+  - Asgaard, Greg
+  - Zuo, Yantao
+  - Huggenvik, Jodi
+  - Botros, Nazeih
+  date: 2004
+  page-range: 249-267
+  serial-number:
+    doi: 10.1080/14622200410001676305
+  parent:
+    type: periodical
+    title: Nicotine & Tobacco Research
+    issue: 2
+    volume: 6
+Haybron2008:
+  type: chapter
+  title: Philosophy and the science of subjective well-being
+  author: Haybron, Daniel M.
+  date: 2008
+  editor:
+  - Eid, Michael
+  - Larsen, Randy J.
+  page-range: 17-43
+  parent:
+    type: book
+    title: The science of subjective well-being
+    publisher:
+      name: Guilford Press
+      location: New York, NY
+Herbst-Damm2005:
+  type: article
+  title: Volunteer support, marital status, and the survival times of terminally ill patients
+  author:
+  - Herbst-Damm, Kathryn L.
+  - Kulik, James A.
+  date: 2005
+  page-range: 225-229
+  parent:
+    type: periodical
+    title: Health Psychology
+    issue: 2
+    volume: 24
+Lassen2006:
+  type: article
+  title: The relationship of school-wide positive behavior support to academic achievement in an urban middle school
+  author:
+  - Lassen, Stephen R.
+  - Steele, Michael M.
+  - Sailor, Wayne
+  date: 2006
+  page-range: 701-712
+  parent:
+    type: periodical
+    title: Psychology in the Schools
+    issue: 6
+    volume: 43
+JRLevin2000:
+  type: article
+  title: What to do about educational research's credibility gaps?
+  author:
+  - Levin, Joel R.
+  - O'Donnell, Angela M.
+  date: 2000
+  page-range: 201-256
+  parent:
+    type: periodical
+    title: Journal of Cognitive Education and Psychology
+    volume: 1
+MLevin1990:
+  type: article
+  title: 'Scientific mnemonomies: {M}ethods for maximizing more than memory'
+  author:
+  - Levin, Mary E.
+  - Levin, Joel R.
+  date: 1990
+  page-range: 301-321
+  parent:
+    type: periodical
+    title: American Educational Research Journal
+    volume: 27
+Mayer2008a:
+  type: article
+  title: 'Applying the science of learning: {E}vidence-based principles for the design of multimedia instruction'
+  author: Mayer, Richard E.
+  date: 2008
+  page-range: 760-769
+  parent:
+    type: periodical
+    title: American Psychologist
+    volume: 63
+Mayer2008b:
+  type: article
+  title: Old advice for new researchers
+  author: Mayer, Richard E.
+  date: 2008
+  page-range: 19-28
+  parent:
+    type: periodical
+    title: Educational Psychology Review
+    volume: 20
+Shotton1989:
+  type: book
+  title: Computer addiction? {A} study of computer dependency
+  author: Shotton, Margaret A.
+  date: 1989
+  publisher:
+    name: Taylor & Francis
+    location: London, England
+vonDavier2011:
+  type: article
+  title: Measuring growth in a longitudinal large-scale assessment with a general latent variable model
+  author:
+  - name: Davier
+    given-name: Matthias
+    prefix: von
+  - Xu, Xueli
+  - Carstensen, Claus H.
+  date: 2011
+  page-range: 318-336
+  parent:
+    type: periodical
+    title: Psychometrika
+    volume: 76
+

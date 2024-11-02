@@ -1,12 +1,19 @@
 [package]
-name = "apa7"
-version = "0.1.0"
+name = "versatile-apa"
+version = "7.0.0"
 entrypoint = "lib.typ"
 repository = "https://github.com/jassielof/typst-templates"
 authors = ["Jassiel Ovando <https://github.com/jassielof>"]
 license = "MIT-0"
 description = "Comprehensive APA 7th Edition Style Template for Typst, suitable for both student and professional papers."
-keywords = ["American Psychological Association", "APA", "APA 7th Edition", "Academic Writing", "Psychology", "Research"]
+keywords = [
+    "American Psychological Association",
+    "APA",
+    "APA 7th Edition",
+    "Academic Writing",
+    "Psychology",
+    "Research",
+]
 categories = ["paper", "report"]
 disciplines = ["psychology"]
 

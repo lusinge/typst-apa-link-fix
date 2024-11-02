@@ -73,7 +73,7 @@ Referencing @fig:sample-stimuli.
   [
     #image(
       "../assets/images/sample-illustration-experimental-stimuli.png",
-      alt: "Two computer-generated cartoon bees, one with two legs, a striped body, single wings, and antennae, and the other with six legs, a spotted body, double wings, and no antennae."
+      alt: "Two computer-generated cartoon bees, one with two legs, a striped body, single wings, and antennae, and the other with six legs, a spotted body, double wings, and no antennae.",
     )
     #set align(left)
     _Note._
@@ -87,11 +87,12 @@ Referencing @fig:sample-map
 #figure(
   caption: [Poverty Rate in the United States, 2017],
   [
-    #image("../assets/images/sample-map.png",
-      alt: "Map of the United States, with color gradients indicating percentage of people living in poverty."
+    #image(
+      "../assets/images/sample-map.png",
+      alt: "Map of the United States, with color gradients indicating percentage of people living in poverty.",
     )
     #set align(left)
     _Note._
     The map does not include data for Puerto Rico. Adapted from 2017 Poverty Rate in the United States, by U.S. Census Bureau, 2017 (https://www.census.gov/library/visualizations/2018/comm/acs-poverty-map.html). In the public domain.
-  ]
+  ],
 ) <fig:sample-map>

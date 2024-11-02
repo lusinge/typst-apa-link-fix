@@ -115,6 +115,9 @@
 #include "sections/computer-code.typ"
 
 #pagebreak()
+#include "sections/math.typ"
+
+#pagebreak()
 #bibliography(
   "bibliography/bibliography.bib",
   full: true,

@@ -273,6 +273,10 @@
     leading: 1em
   )
 
+  set math.equation(
+    numbering: "(1)"
+  )
+
   show figure.where(kind: raw): it => {
     set align(left)
     it.caption

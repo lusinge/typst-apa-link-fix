@@ -1,199 +1,163 @@
-Borst2011a:
-  type: article
-  title: A fictitious entry to demonstrate complicated bibliographies
-  author:
-  - Borst, Grégoire
-  - Kosslyn, Stephen M.
-  - Kievit, Rogier A.
-  - Thompson, William L.
-  date: 2011
-  page-range: 2-3
-  parent:
-    type: periodical
-    title: Journal of Nothingness
-    volume: 1
-Borst2011b:
-  type: article
-  title: Mental rotation is not easily cognitively penetrable
-  author:
-  - Borst, Grégoire
-  - Kievit, Rogier A.
-  - Thompson, William L.
-  - Kosslyn, Stephen M.
-  date: 2011
-  page-range: 60-75
-  parent:
-    type: periodical
-    title: Journal of Cognitive Psychology
-    volume: 23
-Borst2011c:
-  type: article
-  title: 'Understanding the dorsal and ventral systems of the human cerebral cortex: {B}eyond dichotomies'
-  author:
-  - Borst, Grégoire
-  - Thompson, William L.
-  - Kosslyn, Stephen M.
-  date: 2011
-  page-range: 624-632
-  parent:
-    type: periodical
-    title: American Psychologist
-    volume: 66
-deWaal2009:
-  type: article
-  title: 'Safety and security at school: {A} pedagogical perspective'
-  author:
-  - name: Waal
-    given-name: Elda
-    prefix: de
-  - Grosser, M. M.
-  date: 2009
-  page-range: 697-706
-  parent:
-    type: periodical
-    title: Teaching and Teacher Education
-    volume: 25
-Franklin2010:
-  type: article
-  title: 'The two sides of beauty: {L}aterality and the duality of facial attractiveness'
-  author:
-  - Franklin, Robert G., Jr.
-  - Adams, Reginald B., Jr.
-  date: 2010
-  page-range: 300-305
-  parent:
-    type: periodical
-    title: Brain and Cognition
-    volume: 72
-Gilbert2004:
-  type: article
-  title: Effects of quitting smoking on {EEG} activation and attention last for more than 31 days and are more severe with stress, dependence, {DRD2 A1} allele, and depressive traits
-  author:
-  - Gilbert, David
-  - McClernon, Joseph
-  - Rabinovich, Norka
-  - Sugai, Chihiro
-  - Plath, Louisette
-  - Asgaard, Greg
-  - Zuo, Yantao
-  - Huggenvik, Jodi
-  - Botros, Nazeih
-  date: 2004
-  page-range: 249-267
+knuth1984texbook:
+  type: book
+  title: The TeXbook
+  author: Knuth, Donald E.
+  date: 1984
+  publisher:
+    name: Addison-Wesley
+    location: Reading, Massachusetts
   serial-number:
-    doi: 10.1080/14622200410001676305
-  parent:
-    type: periodical
-    title: Nicotine & Tobacco Research
-    issue: 2
-    volume: 6
-Haybron2008:
-  type: chapter
-  title: Philosophy and the science of subjective well-being
-  author: Haybron, Daniel M.
-  date: 2008
-  editor:
-  - Eid, Michael
-  - Larsen, Randy J.
-  page-range: 17-43
+    isbn: 0-201-13448-9
   parent:
     type: book
-    title: The science of subjective well-being
+    title: Computers & Typesetting
+einstein1905:
+  type: article
+  title: Zur Elektrodynamik bewegter K{ö}rper
+  author: Einstein, Albert
+  date: 1905
+  page-range: 891-921
+  serial-number:
+    doi: 10.1002/andp.19053221004
+  parent:
+    type: periodical
+    title: Annalen der Physik
+    issue: 10
+    volume: 322
+lamport1994latex:
+  type: article
+  title: "LaTeX: A Document Preparation System"
+  author: Lamport, Leslie
+  date: 1994
+  page-range: 1-10
+  serial-number:
+    doi: 10.1145/1234567.1234568
+  parent:
+    type: proceedings
+    title: Proceedings of the 1994 Annual Meeting of the Association for Computing Machinery
     publisher:
-      name: Guilford Press
-      location: New York, NY
-Herbst-Damm2005:
-  type: article
-  title: Volunteer support, marital status, and the survival times of terminally ill patients
-  author:
-  - Herbst-Damm, Kathryn L.
-  - Kulik, James A.
-  date: 2005
-  page-range: 225-229
-  parent:
-    type: periodical
-    title: Health Psychology
-    issue: 2
-    volume: 24
-Lassen2006:
-  type: article
-  title: The relationship of school-wide positive behavior support to academic achievement in an urban middle school
-  author:
-  - Lassen, Stephen R.
-  - Steele, Michael M.
-  - Sailor, Wayne
-  date: 2006
-  page-range: 701-712
-  parent:
-    type: periodical
-    title: Psychology in the Schools
-    issue: 6
-    volume: 43
-JRLevin2000:
-  type: article
-  title: What to do about educational research's credibility gaps?
-  author:
-  - Levin, Joel R.
-  - O'Donnell, Angela M.
-  date: 2000
-  page-range: 201-256
-  parent:
-    type: periodical
-    title: Journal of Cognitive Education and Psychology
-    volume: 1
-MLevin1990:
-  type: article
-  title: 'Scientific mnemonomies: {M}ethods for maximizing more than memory'
-  author:
-  - Levin, Mary E.
-  - Levin, Joel R.
-  date: 1990
-  page-range: 301-321
-  parent:
-    type: periodical
-    title: American Educational Research Journal
-    volume: 27
-Mayer2008a:
-  type: article
-  title: 'Applying the science of learning: {E}vidence-based principles for the design of multimedia instruction'
-  author: Mayer, Richard E.
-  date: 2008
-  page-range: 760-769
-  parent:
-    type: periodical
-    title: American Psychologist
-    volume: 63
-Mayer2008b:
-  type: article
-  title: Old advice for new researchers
-  author: Mayer, Richard E.
-  date: 2008
-  page-range: 19-28
-  parent:
-    type: periodical
-    title: Educational Psychology Review
-    volume: 20
-Shotton1989:
-  type: book
-  title: Computer addiction? {A} study of computer dependency
-  author: Shotton, Margaret A.
-  date: 1989
+      name: ACM
+      location: New York, NY, USA
+turing1936computable:
+  type: thesis
+  title: On Computable Numbers, with an Application to the Entscheidungsproblem
+  author: Turing, Alan M.
+  date: 1936
+  organization: University of Cambridge
+mccarthy1960lisp:
+  type: report
+  title: Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+  author: McCarthy, John
+  date: 1960
+  organization: MIT Research Laboratory of Electronics
+  issue: AI-195
+python3:
+  type: reference
+  title: Python 3.9.1 Documentation
+  author: Foundation, Python Software
+  date: 2020
+  url: https://docs.python.org/3/
+  note: "[Online; accessed 1-October-2023]"
+tesla1898method:
+  type: patent
+  title: Method of and Apparatus for Controlling Mechanism of Moving Vessels or Vehicles
+  author: Tesla, Nikola
+  date: 1898-11-08
+  issue: US613809A
+newton1665calculus:
+  type: manuscript
+  title: Method of Fluxions
+  author: Newton, Isaac
+  date: 1665
+  note: Unpublished manuscript
+knuth1986tex:
+  type: misc
+  title: The TeXbook
+  author: Knuth, Donald E.
+  date: 1986
   publisher:
-    name: Taylor & Francis
-    location: London, England
-vonDavier2011:
-  type: article
-  title: Measuring growth in a longitudinal large-scale assessment with a general latent variable model
-  author:
-  - name: Davier
-    given-name: Matthias
-    prefix: von
-  - Xu, Xueli
-  - Carstensen, Claus H.
-  date: 2011
-  page-range: 318-336
+    name: null
+    location: Reading, Massachusetts
+  note: Computers & Typesetting, Volume A
+shannon1937algebra:
+  type: thesis
+  title: A Symbolic Analysis of Relay and Switching Circuits
+  author: Shannon, Claude E.
+  date: 1937
+  organization: Massachusetts Institute of Technology
+siggraph2023:
+  type: proceedings
+  title: Proceedings of the 50th Annual Conference on Computer Graphics and Interactive Techniques
+  date: 2023
+  editor:
+    - Doe, John
+    - Smith, Jane
+  publisher:
+    name: ACM
+    location: Los Angeles, CA, USA
+  serial-number:
+    isbn: 978-1-4503-XXXX-X
+knuth1998art:
+  type: anthology
+  title: The Art of Computer Programming
+  author: Knuth, Donald E.
+  date: 1998
+  publisher: Addison-Wesley
+  serial-number:
+    isbn: 0-201-89683-4
+census2020:
+  type: misc
+  title: 2020 Census Data
+  author: Bureau, United States Census
+  date: 2020
+  url: https://www.census.gov/data.html
+  note: "[Online; accessed 1-October-2023]"
+r2023:
+  type: misc
+  title: "R: A Language and Environment for Statistical Computing"
+  author: Team, R Core
+  date: 2023
+  url: https://www.r-project.org/
+  note: "[Online; accessed 1-October-2023]"
+wikipedia:
+  type: misc
+  title: BibTeX — Wikipedia{,} The Free Encyclopedia
+  author: contributors, Wikipedia
+  date: 2023
+  url: https://en.wikipedia.org/wiki/BibTeX
+  note: "[Online; accessed 1-October-2023]"
+latex3:
+  type: web
+  title: The LaTeX3 Project
+  author: Project, The LaTeX3
+  date: 2023
+  url: https://www.latex-project.org/latex3/
+  note: "[Online; accessed 1-October-2023]"
+knuth1997art:
+  type: chapter
+  title: Sorting and Searching
   parent:
-    type: periodical
-    title: Psychometrika
-    volume: 76
-
+    type: chapter
+    title: The Art of Computer Programming
+    author: Knuth, Donald E.
+    date: 1997
+    page-range: 1-780
+    serial-number:
+      isbn: 0-201-89685-0
+    parent:
+      type: book
+      publisher: Addison-Wesley
+      volume: 3
+      edition: 2nd
+hopper1952compiler:
+  type: article
+  title: The Education of a Computer
+  author: Hopper, Grace
+  date: 1952
+  page-range: 243-249
+  parent:
+    type: proceedings
+    title: Proceedings of the ACM National Meeting
+    publisher:
+      name: null
+      location: Pittsburgh, Pennsylvania

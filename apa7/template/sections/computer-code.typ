@@ -1,4 +1,6 @@
 = Computer code
+The template has some support for raw/computer code, but if further customization is wanted, I recommend using #link("https://typst.app/universe/package/codly/")[Codly].
+
 == Code block
 === Code block as a figure
 

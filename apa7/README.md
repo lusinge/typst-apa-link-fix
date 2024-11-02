@@ -1,1 +1,1 @@
-# APA 7th Edition Template for Typst
+# Versatile APA 7th Edition Template for Typst

@@ -3,7 +3,7 @@
 
 #show: apa7.with(
   title: [American Psychological Association (APA) Style Template for Typst],
-  
+
   // // authors with different affiliations
   // authors: (
   //   (
@@ -71,10 +71,10 @@
       name: [Affiliation Department 3],
     )
   ),
-  
+
   // custom-authors: [Author Name],
   // custom-affiliations: [Affiliation Department, Affiliation Name],
-  
+
   // Student-specific fields
   course: [Course Code: Course Name],
   instructor: [Instructor Name],
@@ -85,7 +85,7 @@
   running-head: [running head],
   author-notes: [
     #include-orcid([Author Name], "0000-0000-0000-0000")
-    
+
     #lorem(50)
   ],
   keywords: ("APA", "template", "Typst"),
@@ -99,7 +99,7 @@
   region: "us",
   language: "en",
   paper-size: "us-letter",
-  implicit-introduction-heading: true, // wether to repeat the paper title as the introduction heading
+  implicit-introduction-heading: true,
   toc: true,
 )
 

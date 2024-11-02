@@ -6,10 +6,13 @@ Referencing @table:sample-demographic-characteristics.
 #figure(
   [
     #table(
-      align: (x, y) => 
-        if (y == 0 or y == 1) and x >= 0 { center }
-        else if x == 0 and y > 0 { left }
-        else { center },
+      align: (x, y) => if (y == 0 or y == 1) and x >= 0 {
+        center
+      } else if x == 0 and y > 0 {
+        left
+      } else {
+        center
+      },
       columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
       table.header(
         table.hline(),
@@ -19,11 +22,18 @@ Referencing @table:sample-demographic-characteristics.
         table.cell(colspan: 2)[Wait-list control],
         table.cell(colspan: 2)[Full sample],
         table.hline(),
-        [n], [%], [n], [%], [n], [%], [n], [%],
+        [n],
+        [%],
+        [n],
+        [%],
+        [n],
+        [%],
+        [n],
+        [%],
       ),
       table.hline(),
       [Gender],
-      table.cell(colspan: 8)[], 
+      table.cell(colspan: 8)[],
       [~Female],
       [25], [50], [20], [40], [23], [46], [68], [45.3],
       [~Male],
@@ -69,10 +79,13 @@ Referencing @table:sample-results-of-several-t-tests.
 #figure(
   [
     #table(
-      align: (x, y) => 
-        if (y == 0 or y == 1) and x >= 0 { center }
-        else if x == 0 and y > 0 { left }
-        else { center },
+      align: (x, y) => if (y == 0 or y == 1) and x >= 0 {
+        center
+      } else if x == 0 and y > 0 {
+        left
+      } else {
+        center
+      },
       columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
       table.header(
         table.hline(),
@@ -83,7 +96,10 @@ Referencing @table:sample-results-of-several-t-tests.
         table.cell(rowspan: 2)[$p$],
         table.cell(rowspan: 2)[Cohen's $d$],
         table.hline(),
-        [M], [SD], [M], [SD]
+        [M],
+        [SD],
+        [M],
+        [SD],
       ),
       table.hline(),
       [Maximum asymptote, proportion],
@@ -107,14 +123,27 @@ Referencing @table:sample-correlation.
 #figure(
   [
     #table(
-      align: (x, y) =>
-        if y == 0 and x >= 0 { center }
-        else if x == 0 and y > 0 { left }
-        else { center },
+      align: (x, y) => if y == 0 and x >= 0 {
+        center
+      } else if x == 0 and y > 0 {
+        left
+      } else {
+        center
+      },
       columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
       table.hline(),
       table.header(
-        [Variable], [_n_], [_M_], [_SD_], [1], [2], [3], [4], [5], [6], [7],
+        [Variable],
+        [_n_],
+        [_M_],
+        [_SD_],
+        [1],
+        [2],
+        [3],
+        [4],
+        [5],
+        [6],
+        [7],
       ),
       [1. Internal-external status#super[a]], [3,697], [0.43], [0.49], [-], [-], [-], [-], [-], [-], [-],
       [2. Manager job performance], [2,134], [3.14], [0.62], [-.08\*\*], [-], [-], [-], [-], [-], [-],

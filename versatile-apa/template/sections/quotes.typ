@@ -15,5 +15,5 @@ Researchers have studied how people talk to themselves:
 === Block quotation with narrative citation
 Flores et al. (2018) described how they addressed potential researcher bias when working with an intersectional community of transgender people of color:
 #quote(attribution: [(p. 311)])[
-  Everyone on the research team belonged to a stigmatized group but also held privileged identities. Throughout the research process, we attended to the ways in which our privileged and oppressed identities may have influenced the research process, findings, and presentation of results. 
+  Everyone on the research team belonged to a stigmatized group but also held privileged identities. Throughout the research process, we attended to the ways in which our privileged and oppressed identities may have influenced the research process, findings, and presentation of results.
 ]

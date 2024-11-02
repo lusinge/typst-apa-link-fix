@@ -119,7 +119,7 @@
 
 #pagebreak()
 #bibliography(
-  "bibliography/bibliography.bib",
+  "bibliography/ref.bib",
   full: true,
   title: auto,
 )

@@ -27,3 +27,12 @@ And also upload your project as a git repository without any conflicts.
 The repository will appear as a reference git repository in your project.
 
 ### Typst Universe
+
+- [x] `versatile-apa:7.0.0`: [Versatile APA in Typst Universe](https://typst.app/universe/package/versatile-apa/)
+- [ ] `latex-std`
+  - [ ] `article`
+  - [ ] `report`
+  - [ ] `book`
+- [ ] `upsa-bo`
+  - [ ] `estudio-de-factibilidad`
+  - [ ] `tesis`

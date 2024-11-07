@@ -1,6 +1,5 @@
 # Output files
 *.pdf
-*.png
 !thumbnail.png
 
 # LaTeX

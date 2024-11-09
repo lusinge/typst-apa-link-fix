@@ -28,7 +28,7 @@
 
 #let is-multiple-authors-with-different-affiliations(authors, affiliations) = {
   let unique-affiliations = ()
-  
+
   for author in authors {
     for author-affiliations in author.affiliations {
       if author-affiliations not in unique-affiliations {
@@ -42,7 +42,7 @@
 
 #let print-authors-with-different-affiliations(authors, affiliations, language) = {
   affiliations = enumerate-affiliations(affiliations)
-  
+
   let aff-positions = (:)
   for aff in affiliations {
     aff-positions.insert(aff.id, str(aff.n))
@@ -84,15 +84,19 @@
     if affiliations.len() == 1 {
       affiliations.at(0).name
     } else if is-multiple-authors-with-different-affiliations(authors, affiliations) {
-      enumerate-affiliations(affiliations).map(aff => [
-        #super[#aff.n] #aff.name
-        #parbreak()
-      ]).join()
+      enumerate-affiliations(affiliations)
+        .map(aff => [
+            #super[#aff.n] #aff.name
+            #parbreak()
+          ])
+        .join()
     } else {
-      affiliations.map(aff => [
-        #aff.name
-        #parbreak()
-      ]).join()
+      affiliations
+        .map(aff => [
+            #aff.name
+            #parbreak()
+          ])
+        .join()
     }
   } else {
     affiliations

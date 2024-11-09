@@ -66,6 +66,11 @@
     ]
   }
 
+  show table.cell: set par(
+    leading: 1em,
+    spacing: 2em,
+  )
+
   show figure: set block(
     breakable: true
   )

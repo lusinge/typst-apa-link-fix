@@ -1,8 +1,20 @@
+#import "../../lib.typ": apa-img
+
 = Sample figures
 // Sample figures taken from https://apastyle.apa.org/style-grammar-guidelines/tables-figures/sample-figures
 == Sample bar graph
-Referencing @fig:sample-bar-graph.
+// Referencing @fig:sample-bar-graph.
 
+#apa-img(
+  caption: [Framing Scores for Different Reward Sizes],
+  image: image("../assets/images/sample-bar-graph.png"),
+  note: [
+    Framing scores of adolescents and young adults are shown for low and high risks and for small, medium, and large rewards (error bars show standard errors).
+  ],
+  label: "fig:sample-bar-graph",
+)
+
+#pagebreak()
 #figure(
   [
     #image("../assets/images/sample-bar-graph.png")

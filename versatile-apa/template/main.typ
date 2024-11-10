@@ -1,4 +1,5 @@
-#import "@preview/versatile-apa:7.0.0": *
+// #import "@preview/versatile-apa:7.0.0": *
+#import "../lib.typ": *
 
 #show: versatile-apa.with(
   title: [American Psychological Association (APA) Style Template for Typst],

@@ -3,6 +3,7 @@
 #import "utils/authoring.typ": *
 #import "utils/orcid.typ": *
 #import "utils/addendum.typ": *
+#import "utils/apa-fig.typ": *
 
 // The APA 7th edition template for academic and professional documents.
 #let versatile-apa(

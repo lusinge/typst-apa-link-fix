@@ -1,21 +1,21 @@
-#let apa-img(caption: [], image: "", note: [], label: "") = [
-  #figure(
-    caption: caption,
-    [
-      #image
-      #set align(left)
-      _Note_. #note
-    ],
-  ) #std.label(label)
-]
+#import "languages.typ": *
+#import "to-string.typ": *
 
-#let apa-tab(caption: [], table: table(), note: [], label: "") = [
+#let apa-figure(body, caption: none, gap: 1.5em, kind: auto, numbering: "1", outlined: true, placement: none, scope: "column", supplement: auto, note: none, label: none) = context [
   #figure(
-    caption: caption,
     [
-      #table
+      #body
       #set align(left)
-      _Note_. #note
+      #emph(get-terms(text.lang).Note).
+      #note
     ],
+    caption: caption,
+    gap: gap,
+    kind: kind,
+    numbering: numbering,
+    outlined: outlined,
+    placement: placement,
+    scope: scope,
+    supplement: supplement,
   ) #std.label(label)
 ]

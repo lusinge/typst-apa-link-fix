@@ -7,6 +7,7 @@
       "Keywords": "Keywords",
       "Appendix": "Appendix",
       "Annex": "Annex",
+      "Note": "Note",
     )
   } else if language == "es" {
     (
@@ -16,6 +17,7 @@
       "Keywords": "Palabras clave",
       "Appendix": "Apéndice",
       "Annex": "Anexo",
+      "Note": "Nota",
     )
   } else if language == "de" {
     (
@@ -25,6 +27,7 @@
       "Keywords": "Schlüsselwörter",
       "Appendix": "Anhang",
       "Annex": "Anhang",
+      "Note": "Hinweis",
     )
   } else if language == "pt" {
     (
@@ -34,6 +37,7 @@
       "Keywords": "Palavras-chave",
       "Appendix": "Apêndice",
       "Annex": "Anexo",
+      "Note": "Nota",
     )
   } else {
     panic("Unsupported language:", language)

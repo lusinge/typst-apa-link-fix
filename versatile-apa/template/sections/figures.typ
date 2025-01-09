@@ -43,8 +43,8 @@ Referencing @fig:sample-path-model.
   caption: [Path Analysis Model of Associations Between ASMC and Body-Related Constructs],
   image("../assets/images/sample-path-model.png"),
   note: [
-    The path analysis shows associations between ASMC and endogenous body-related variables (body esteem, body comparison, and body surveillance), controlling for time spent on social media. Coefficients presented are standardized linear regression coefficients.\#super[\*\*\*]$p < .001$.
-  ],
+    The path analysis shows associations between ASMC and endogenous body-related variables (body esteem, body comparison, and body surveillance), controlling for time spent on social media. Coefficients presented are standardized linear regression coefficients.],
+  probability-note: [#super[\*\*\*]$p < .001$.],
   label: "fig:sample-path-model",
 )
 

@@ -1,6 +1,6 @@
 # LaTeX APA7 Document Class References
 
-Some docuemnt examples for each of the class options:
+Some document examples for each of the class options:
 
 - student
 - manuscript

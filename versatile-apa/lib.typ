@@ -2,7 +2,7 @@
 #import "utils/languages.typ": *
 #import "utils/authoring.typ": *
 #import "utils/orcid.typ": *
-#import "utils/addendum.typ": *
+#import "utils/appendix.typ": *
 #import "utils/apa-figure.typ": *
 
 // The APA 7th edition template for academic and professional documents.

@@ -16,14 +16,21 @@ The template allows you to easily create academic students for both student and 
 
 - Title page
 - Abstract
-- Localization
+- Localization:
+  - English
+  - Spanish
+  - Portuguese
+  - German
 - Headings
 - Raw/computer code
 - Math equations
 - Appendices
 - References
-- Quotation blocks (40 words or more)
-- Figures and tables
+- Quotation (short/block depending on word count)
+- Figures and tables with notes:
+  - General notes
+  - Specific notes
+  - Probability notes
 - Lists
 - Footnotes
 - Authoring:
@@ -36,7 +43,6 @@ The template allows you to easily create academic students for both student and 
 As of now, the template is in its initial stages and will be updated with more features in the future. Some of the planned features include:
 
 - **LaTeX `apa7` class full support**: This template is inspired by the `apa7` class in LaTeX, and it's planned to also include support for all 4 formats of APA (student, professional, journal, and manuscript).
-- **Figures notes**: Improved support for all 3 types of APA notes (general, specific, probability).
 
 ## License
 

@@ -132,13 +132,12 @@
 #pagebreak()
 #include "sections/figures.typ"
 
-
 #show: appendix.with(
-  heading-numbering: "A.1",
+  heading-numbering: "A",
   supplement: "Appendix",
 )
 
 #include "sections/appendix.typ"
 
 = List of Appendices
-#appendix-outline(title: none, )
+#appendix-outline(title: none)

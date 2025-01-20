@@ -1,5 +1,4 @@
 #import "languages.typ": *
-#import "to-string.typ": *
 
 // For supplement: either "Appendix", "Annex" or "Addendum"
 #let appendix(

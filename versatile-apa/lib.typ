@@ -257,8 +257,8 @@
     radius: 10pt,
   )
 
-  show raw: text.with(
-    font: "Lucida Console",
+  show raw: set text(
+    font: "Cascadia Code",
     size: 10pt,
   )
 

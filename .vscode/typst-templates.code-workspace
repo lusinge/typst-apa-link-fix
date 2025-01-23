@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "Typst Templates"
+		},
+		{
+			"path": "../versatile-apa",
+			"name": "Versatile APA"
+		},
+		{
+			"path": "../upsa-bo/estudio-de-factibilidad",
+			"name": "UPSA-Bolivia: Estudio de Factibilidad"
+		},
+		{
+			"path": "../upsa-bo/tesis",
+			"name": "USPA-Bolivia: Tesis"
+		},
+		{
+			"path": "../latex-standard",
+			"name": "LaTeX Standard"
+		}
+	],
+	"settings": {}
+}

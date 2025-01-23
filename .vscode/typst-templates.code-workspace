@@ -1,0 +1,75 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "Typst Templates"
+		},
+		{
+			"path": "../versatile-apa",
+			"name": "Versatile APA"
+		},
+		{
+			"path": "../upsa-bo/estudio-de-factibilidad",
+			"name": "UPSA-Bolivia: Estudio de Factibilidad"
+		},
+		{
+			"path": "../upsa-bo/tesis",
+			"name": "USPA-Bolivia: Tesis"
+		},
+		{
+			"path": "../latex-standard",
+			"name": "LaTeX Standard"
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"Alderson",
+			"ASMC",
+			"biocularly",
+			"Codly",
+			"Cohabitating",
+			"colbreak",
+			"colspan",
+			"CTAN",
+			"datetime",
+			"Desbeneficios",
+			"emph",
+			"Ervin",
+			"Fernyhough",
+			"FODA",
+			"footnotesize",
+			"Hidrosanitarias",
+			"hline",
+			"ixpt",
+			"Libertinus",
+			"linebreak",
+			"linebreaks",
+			"Macrolocalización",
+			"Microlocalización",
+			"Noncoplanar",
+			"normalsize",
+			"orcid",
+			"Organolépticas",
+			"pagebreak",
+			"parbreak",
+			"PESTAL",
+			"Reinversiones",
+			"repr",
+			"rowspan",
+			"scriptsize",
+			"smallcaps",
+			"Sociodemographic",
+			"Vásquez",
+			"viiipt",
+			"viipt",
+			"vipt",
+			"xiipt",
+			"xipt",
+			"xivpt",
+			"xviipt",
+			"xxpt",
+			"xxvpt"
+		],
+		"cSpell.language": "en,es-ES,en-GB,en-US,de,de-DE,lorem,es,pt,nl,it,fr"
+	}
+}

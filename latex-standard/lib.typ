@@ -1,6 +1,6 @@
 #import "@preview/drafting:0.2.0": *
-#import "font-sizes.typ": *
-#import "../utils/to-string.typ": *
+#import "utils/font-sizes.typ": *
+#import "./utils/to-string.typ": *
 
 #set rect(outset: 0cm, inset: 0cm, width: 100%, height: 100%)
 
@@ -13,9 +13,9 @@
   title: [Title],
   author: [Author Name],
   date: datetime.today().display("[month repr:long] [day], [year]"),
-  
+
   class: "article",
-  
+
   font-size: 10pt,
   paper-size: "us-letter",
   flush-left-equations: false,
@@ -30,8 +30,8 @@
 
   make-title: false,
   table-of-contents: false,
-  
-  
+
+
   body
 ) = {
   set document(
@@ -80,7 +80,7 @@
     #text(size: font-size.large, author)
     #parbreak()
     #text(size: font-size.large, date)
-    
+
     #v(1fr)
     ]
 
@@ -91,10 +91,10 @@
 
   show heading.where(level: 1): set text(size: font-size.Huge)
   show heading.where(level: 1): set block(above: 2em)
-  
+
   show heading.where(level: 2): set text(size: font-size.huge)
   show heading.where(level: 2): set block(spacing: 3em)
-  
+
   show heading.where(level: 3): set text(size: font-size.Large)
 
   show outline: set heading(level: 2,)
@@ -139,7 +139,7 @@
   // show heading.where(level: 2): it => [
   //   #colbreak(weak: true)
   //   #set par(first-line-indent: 0in)
-    
+
   //   #v(70pt)
   //   Chapter #counter(heading.where(level: 2)).display().trim(".", at: end)
   //   #v(20pt)

@@ -14,7 +14,7 @@
   note: none,
   specific-note: none,
   probability-note: none,
-  label: none,
+  label: "",
 ) = context [
   #figure(
     [

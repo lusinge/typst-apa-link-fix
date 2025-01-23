@@ -1,4 +1,4 @@
-# Plantilla de *Tesis* de la Universidad Privada de Santa Cruz de la Sierra (UPSA)
+# Plantilla de *Estudio de Factibilidad* de la Universidad Privada de Santa Cruz de la Sierra (UPSA)
 
 El estilo, formato y estructura de la plantilla está basado en el reglamento interno de la universidad misma (TFG).
 

@@ -1,7 +1,7 @@
 #import "@preview/hydra:0.5.1": hydra
 #import "./utils/to-string.typ": *
 
-#let estudio-de-factibilidad(
+#let tesis(
   título: [],
   facultades-carreras: [],
   estudiantes: [],

@@ -15,12 +15,11 @@
   ],
   abstracto: lorem(50),
   resumen-ejecutivo: lorem(50),
-  bibliografía: "referencias.yml",
 )
 
 #[
   #show: contenido-principal.with()
-  
+
   #include "capítulos/1.introducción.typ"
   #include "capítulos/2.marco teórico.typ"
   #include "capítulos/3.diagnóstico interno de la empresa.typ"

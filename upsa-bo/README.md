@@ -1,1 +1,1 @@
-# Template of Thesis for the 'Universidad Privada de Santa Cruz de la Sierra' (UPSA)
+# Plantillas para Proyectos de la Universidad Privada de Santa Cruz de la Sierra

@@ -1,4 +1,4 @@
-#import "@preview/versatile-apa:7.0.0": *
+#import "../lib.typ": *
 
 #show: versatile-apa.with(
   title: [American Psychological Association (APA) Style Template for Typst],
@@ -68,7 +68,7 @@
     (
       id: "AF-3",
       name: [Affiliation Department 3],
-    )
+    ),
   ),
 
   // custom-authors: [Author Name],
@@ -132,9 +132,12 @@
 #pagebreak()
 #include "sections/figures.typ"
 
-#show: addendum.with(
-  heading-numbering: "A.1.1.",
+#show: appendix.with(
+  heading-numbering: "A",
   supplement: "Appendix",
 )
 
 #include "sections/appendix.typ"
+
+= List of Appendices
+#appendix-outline(title: none)

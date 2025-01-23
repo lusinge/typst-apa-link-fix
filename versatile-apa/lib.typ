@@ -2,88 +2,66 @@
 #import "utils/languages.typ": *
 #import "utils/authoring.typ": *
 #import "utils/orcid.typ": *
-#import "utils/addendum.typ": *
+#import "utils/appendix.typ": *
+#import "utils/apa-figure.typ": *
 
-// The APA 7th edition template for academic and professional documents.
+/// The APA 7th edition template for academic and professional documents.
+///
+/// - title (content): The title of your document.
+/// - authors (dictionary): The authors of the document.
+///   - For each author you must specify their name and their affiliations.
+/// - affiliations (dictionary): The affiliations of the authors.
+///   - For each affiliation you must specify its ID and its name.
+/// - custom-authors (content): The custom authors of the document.
+///   - You can manually specify the authors of the document.
+/// - custom-affiliations (content): The custom affiliations of the document.
+///   - You can manually specify the affiliations of the document.
+/// - course (content): The academic course for the document.
+/// - instructor (content): The instructor for the document.
+/// - due-date (content): The due date for the document.
+/// - running-head (content): The running head for the document.
+/// - author-notes (): The author notes for the document.
+/// - keywords (array | str): The keywords for the document metadata and abstract.
+/// - abstract (content): The abstract of the document.
+/// - journal (bool): Whether to use journal format.
+/// - font-family (): The font family for the document. APA 7th edition recommended fonts are:
+///   - Sans Serif fonts such as 11-point Calibri, 11-point Arial, or 10-point Lucida Sans Unicode
+///   - Serif fonts such as 12-point Times New Roman, 11-point Georgia, or   10-point Computer Modern (LaTeX)
+/// - font-size (length): The font size for the document.
+///   - APA 7th edition recommends a 10-12 point font size.
+/// - region (str): The region for the document (e.g., "us", "uk", "au").
+/// - language (str): The language for the document (e.g., "en", "es", "fr").
+/// - paper-size (str): The paper size for the document (e.g., "us-letter", "a4").
+/// - implicit-introduction-heading (bool): Wether to include the paper title at the top of the first page of the text, which acts as a de facto Level 1 heading.
+/// - toc (bool): Wether to include a table of contents at the beginning of the document.
+/// - body (content): The body of the document.
+/// -> content
 #let versatile-apa(
-  // The title of your document.
   title: [Paper Title],
-
   // Authoring fields
-
-  // The authors of the document.
-  // For each author you must specify their name and their affiliations.
   authors: (:),
-
-  // The affiliations of the authors.
-  // For each affiliation you must specify its ID and its name.
   affiliations: (:),
-
-  // The custom authors of the document.
-  // You can manually specify the authors of the document.
   custom-authors: [],
-
-  // The custom affiliations of the document.
-  // You can manually specify the affiliations of the document.
   custom-affiliations: [],
-
   // Student-specific fields
-
-  // The academic course for the document.
   course: [],
-
-  // The instructor for the document.
   instructor: [],
-
-  // The due date for the document.
   due-date: [],
-
   // Professional-specific fields
-
-  // Running head for the document.
   running-head: [],
-
-  // Author notes for the document.
   author-notes: [],
-
-  // Keywords for the document metadata and abstract.
   keywords: (),
-
-  // The abstract of the document.
   abstract: [],
-
+  journal: false,
   // Common fields
-
-  // The font family for the document.
-  // APA 7th edition recommended fonts are:
-  // - Sans Serif fonts such as 11-point Calibri, 11-point Arial, or 10-point Lucida Sans Unicode
-  // - Serif fonts such as 12-point Times New Roman, 11-point Georgia, or   10-point Computer Modern (LaTeX)
-  // This template defaults to Libertinus Serif.
   font-family: "Libertinus Serif",
-
-  // The font size for the document.
-  // APA 7th edition recommends a 10-12 point font size.
   font-size: 12pt,
-
-  // The region for the document (e.g., "us", "uk", "au").
   region: "us",
-
-  // The language for the document (e.g., "en", "es", "fr").
-  // The language defines the terms used in the document (e.g., "Abstract" vs. "Resumen").
   language: "en",
-
-  // The paper size for the document (e.g., "us-letter", "a4").
   paper-size: "us-letter",
-
-  // Wether to include or skip the paper title at the top of the first page of the text
-  // which acts as a de facto Level 1 heading.
   implicit-introduction-heading: true,
-
-  // Wether to include a table of contents at the beginning of the document.
   toc: false,
-
-  // The body/text of the document.
-  body
+  body,
 ) = {
   let double-spacing = 1.5em
   let first-indent-length = 0.5in
@@ -256,8 +234,8 @@
     radius: 10pt,
   )
 
-  show raw: text.with(
-    font: "Lucida Console",
+  show raw: set text(
+    font: "Cascadia Code",
     size: 10pt,
   )
 
@@ -330,6 +308,16 @@
   } else if (type(abstract) != content) {
     panic("Invalid abstract type, must of type content: ", type(abstract))
   }
+
+  set page(
+    columns: 2,
+    background: [],
+  ) if (journal)
+
+  set par(
+    first-line-indent: 1em,
+    leading: 0.5em,
+  ) if (journal)
 
   if implicit-introduction-heading {
     heading(level: 1, title)

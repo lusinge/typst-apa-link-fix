@@ -1,18 +1,18 @@
 #import "../lib.typ": *
 
 #show: tesis.with(
-  título: [Estudio de Factibilidad],
-  materia: [SIGLA: Proyectos],
+  título: [Tesis],
+  materia: [Modalidad de Graduación:\ Proyecto de Grado],
   fecha: [Segundo Semestre, 2024],
-  docente: [Ing. Docente Nombre],
-  estudiantes: [
-    Estudiante 1 Nombre#super[4] \
-    Estudiante 2 Nombre#super[5] \
-  ],
-  facultades-carreras: [
-    #super[4] FAI: Facultad de Ingeniería, Ingeniería de Sistemas \
-    #super[5] FAI: Facultad de Ingeniería, Ingeniería Industrial y de Sistemas \
-  ],
+  guía: [Ing. Docente Nombre],
+  // Proyecto de Grado para optar por el título de {Carrera}
+  autor: [Nombre Apellido\ Reg.: 2021117600],
+  facultad: [FAI: Facultad de Ingeniería, Ingeniería de Sistemas],
   abstracto: lorem(50),
   resumen-ejecutivo: lorem(50),
 )
+
+#contenido-principal[
+  = Introducción
+  #lorem(50)
+]

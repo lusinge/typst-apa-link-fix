@@ -3,19 +3,20 @@
 
 #let tesis(
   título: [],
-  facultades-carreras: [],
-  estudiantes: [],
+  facultad: [],
+  autor: [],
   materia: [],
   fecha: [],
-  docente: [],
+  guía: [],
   abstracto: [],
   resumen-ejecutivo: [],
+  palabras-clave: (),
   body,
 ) = {
   set document(
     title: to-string(título),
-    author: to-string(estudiantes).trim(),
-    keywords: ("Estudio de Factibilidad", "UPSA"),
+    author: to-string(autor).trim(),
+    keywords: ("Tesis", "UPSA", "Proyecto de grado") + palabras-clave,
   )
 
   set page(
@@ -101,7 +102,7 @@
 
     #v(1fr)
 
-    #facultades-carreras
+    #facultad
 
     #v(1fr)
 
@@ -113,11 +114,11 @@
 
     #v(1fr)
 
-    #estudiantes
+    #autor
 
     #v(1fr)
 
-    #docente \
+    #guía \
     Santa Cruz de la Sierra, Bolivia \
     #fecha
   ]

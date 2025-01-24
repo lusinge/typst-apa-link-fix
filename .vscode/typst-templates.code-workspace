@@ -71,5 +71,12 @@
 			"xxvpt"
 		],
 		"cSpell.language": "en,es-ES,en-GB,en-US,de,de-DE,lorem,es,pt,nl,it,fr"
+	},
+	"extensions": {
+		"recommendations": [
+			"calebfiggers.typst-companion",
+			"myriad-dreamin.tinymist",
+			"surv.typst-math"
+		]
 	}
 }

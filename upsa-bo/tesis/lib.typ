@@ -5,12 +5,15 @@
   título: [],
   facultad: [],
   autor: [],
+  grado: [],
   materia: [],
   fecha: [],
   guía: [],
   abstracto: [],
+  agradecimientos: [],
   resumen-ejecutivo: [],
   palabras-clave: (),
+  portada-externa: true,
   body,
 ) = {
   set document(
@@ -96,7 +99,7 @@
   show heading: set block(spacing: 2em)
   show heading: set par(leading: 1.5em)
 
-  let portada = align(center)[
+  let portada = context align(center)[
     #set text(weight: "bold")
     #image("./assets/images/logo-upsa.png")
 
@@ -112,24 +115,39 @@
 
     #rect(radius: 20%, inset: 10pt)[_"#título"_]
 
+    #if (here().page() == 3) [
+      #v(1fr)
+
+      #grado
+    ]
+
     #v(1fr)
 
     #autor
 
     #v(1fr)
 
-    #guía \
+    #if (guía != []) [
+      #guía \
+    ]
     Santa Cruz de la Sierra, Bolivia \
     #fecha
   ]
 
+  if portada-externa {
+    portada
+
+    pagebreak(to: "odd")
+  }
+
   portada
 
-  pagebreak(to: "odd")
-
-  portada
-
-  pagebreak(weak: false)
+  if (agradecimientos != []) {
+    heading([Agradecimientos], numbering: none)
+    agradecimientos
+  } else {
+    pagebreak(weak: false)
+  }
 
   counter(page).update(0)
 
@@ -141,9 +159,10 @@
   }
 
   if (
-    (type(resumen-ejecutivo) == content and resumen-ejecutivo != []) or (
-      type(resumen-ejecutivo) == str and resumen-ejecutivo != ""
-    )
+    (type(resumen-ejecutivo) == content and resumen-ejecutivo != [])
+      or (
+        type(resumen-ejecutivo) == str and resumen-ejecutivo != ""
+      )
   ) {
     heading([Resumen Ejecutivo], numbering: none)
     resumen-ejecutivo
@@ -160,27 +179,38 @@
     )
   }
 
-  outline(
-    title: [Índice de Tablas],
-    target: figure.where(kind: table),
-  )
-
-  outline(
-    title: [Índice de Figuras],
-    target: figure.where(kind: image),
-  )
-
   set math.equation(numbering: "1.")
 
-  outline(
-    title: [Índice de Expresiones Matemáticas],
-    target: figure.where(kind: math.equation),
-  )
+  context {
+    if (counter(figure.where(kind: table)).final().at(0) != 0) {
+      outline(
+        title: [Índice de Tablas],
+        target: figure.where(kind: table),
+      )
+    }
 
-  outline(
-    title: [Índice de Anexos],
-    target: selector(heading.where(supplement: [Anexo])),
-  )
+    if (counter(figure.where(kind: image)).final().at(0) != 0) {
+      outline(
+        title: [Índice de Figuras],
+        target: figure.where(kind: image),
+      )
+    }
+
+    if (counter(figure.where(kind: math.equation)).final().at(0) != 0) {
+      outline(
+        title: [Índice de Expresiones Matemáticas],
+        target: figure.where(kind: math.equation),
+      )
+    }
+
+    if (counter(heading.where(supplement: [Anexo])).final().at(0) != 0) {
+      outline(
+        title: [Índice de Anexos],
+        target: selector(heading.where(supplement: [Anexo])),
+      )
+    }
+  }
+
 
   set page(numbering: "1")
 

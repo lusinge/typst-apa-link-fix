@@ -271,6 +271,7 @@
   }
 
   set bibliography(style: "apa")
+  show bibliography: set par(first-line-indent: 0in)
 
   if (toc) {
     show outline.entry.where(level: 1): it => {

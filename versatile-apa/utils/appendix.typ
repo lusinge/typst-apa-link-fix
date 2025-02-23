@@ -68,15 +68,13 @@
 
 #let appendix-outline(
   depth: none,
-  fill: repeat[.],
-  indent: none,
+  indent: auto,
   heading-supplement: "Appendix",
   title: auto,
 ) = context [
   #outline(
     title: title,
     depth: depth,
-    fill: fill,
     indent: indent,
     target: heading.where(supplement: [#get-terms(text.lang).at(heading-supplement)]),
   )
@@ -101,7 +99,9 @@
 ) = context [
   #let fig-supplement = supplement
   #let multiple-figures-on-level-1 = query(figure).len() > 1
-  #let only-one-appendix = query(heading.where(level: 1, supplement: [#get-terms(text.lang).at(appendix-supplement)])).len() == 1
+  #let only-one-appendix = (
+    query(heading.where(level: 1, supplement: [#get-terms(text.lang).at(appendix-supplement)])).len() == 1
+  )
   #let figure-heading-numbering = counter(
     heading.where(level: 1, supplement: [#get-terms(text.lang).at(appendix-supplement)]),
   ).display("A")

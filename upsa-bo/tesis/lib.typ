@@ -1,19 +1,21 @@
-#import "@preview/hydra:0.5.1": hydra
+#import "@preview/hydra:0.6.0": hydra
 #import "./utils/to-string.typ": *
 
 #let tesis(
   título: [],
   facultad: [],
   autor: [],
-  grado: [],
+  adición: [],
   materia: [],
-  fecha: [],
   guía: [],
   abstracto: [],
   agradecimientos: [],
   resumen-ejecutivo: [],
   palabras-clave: (),
+  plan: [],
   portada-externa: true,
+  ubicación: "Santa Cruz de la Sierra, Bolivia",
+  fecha: datetime.today().year(),
   body,
 ) = {
   set document(
@@ -109,16 +111,22 @@
 
     #v(1fr)
 
-    #materia
+    #if (plan != []) [
+      #plan \
+    ]
 
-    #v(1fr)
+    #if (materia != []) [
+      #materia
+
+      #v(1fr)
+    ]
 
     #rect(radius: 20%, inset: 10pt)[_"#título"_]
 
-    #if (here().page() == 3) [
+    #if ((here().page() == 3 and adición != []) or (not portada-externa and adición != [])) [
       #v(1fr)
 
-      #grado
+      #adición
     ]
 
     #v(1fr)
@@ -130,7 +138,7 @@
     #if (guía != []) [
       #guía \
     ]
-    Santa Cruz de la Sierra, Bolivia \
+    #ubicación \
     #fecha
   ]
 
@@ -217,6 +225,8 @@
   show heading.where(level: 1): set heading(supplement: [Capítulo])
 
   set page(header: context hydra(1, display: (_, it) => upper(it.body)))
+
+  set bibliography(style: "american-psychological-association")
 
   body
 }

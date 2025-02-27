@@ -14,6 +14,6 @@ jobs:
       - name: Versatile APA
         run: typst compile --root . versatile-apa/template/main.typ
       - name: "UPSA Bolivia: Estudio de Factibilidad"
-        run: typst compile --root . upsa-bo/estudio-factibilidad/template/estudio-de-factibilidad.typ
+        run: typst compile --root . upsa-bo/estudio-de-factibilidad/template/estudio-de-factibilidad.typ
       - name: "UPSA Bolivia: Tesis"
         run: typst compile --root . upsa-bo/tesis/template/tesis.typ

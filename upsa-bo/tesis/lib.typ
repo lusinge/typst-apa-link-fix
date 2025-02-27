@@ -187,7 +187,7 @@
     heading([Agradecimientos], numbering: none)
     agradecimientos
   } else {
-    pagebreak(weak: false)
+    pagebreak(to: "odd")
   }
 
   counter(page).update(1)

@@ -4,11 +4,21 @@
 #let tesis(
   título: [],
   facultad: [],
+  carrera: [],
   autor: [],
+  registro-autor: [],
   adición: [],
+  modalidad: [],
   materia: [],
   guía: [],
+  resumen: [],
   abstracto: [],
+  problemática: [],
+  objetivo-general: [],
+  contenido: [],
+  grado: [Licenciatura],
+  información: [],
+  email: "",
   agradecimientos: [],
   resumen-ejecutivo: [],
   palabras-clave: (),
@@ -18,6 +28,24 @@
   fecha: datetime.today().year(),
   body,
 ) = {
+  if (autor == []) {
+    panic("El autor es obligatorio: ", autor)
+  } else if (carrera == []) {
+    panic("La carrera es obligatoria: ", carrera)
+  } else if (facultad == []) {
+    panic("La facultad es obligatoria: ", facultad)
+  } else if (título == []) {
+    panic("El título es obligatorio: ", título)
+  } else if (registro-autor == []) {
+    panic("El registro del autor es obligatorio: ", registro-autor)
+  } else if (guía == []) {
+    panic("Tutor guía es obligatorio: ", guía)
+  } else if (email == "") {
+    panic("El correo electrónico es obligatorio", email)
+  } else if (palabras-clave == ()) {
+    panic("Las palabras clave son obligatorias", palabras-clave)
+  }
+
   set document(
     title: to-string(título),
     author: to-string(autor).trim(),
@@ -92,11 +120,6 @@
 
   set heading(numbering: "1.")
 
-  show heading.where(level: 1): it => {
-    pagebreak()
-    it
-  }
-
   show heading: set text(size: 12pt)
   show heading: set block(spacing: 2em)
   show heading: set par(leading: 1.5em)
@@ -109,36 +132,46 @@
 
     #facultad
 
+    #carrera
+
     #v(1fr)
 
     #if (plan != []) [
-      #plan \
+      #plan
     ]
 
-    #if (materia != []) [
-      #materia
+    #if (modalidad != []) [
+      Modalidad de Graduación
+
+      #modalidad
 
       #v(1fr)
     ]
 
     #rect(radius: 20%, inset: 10pt)[_"#título"_]
 
-    #if ((here().page() == 3 and adición != []) or (not portada-externa and adición != [])) [
+    #if (here().page() == 3 and portada-externa) [
       #v(1fr)
 
-      #adición
+      #modalidad para Optar por el Grado de #grado en #carrera
     ]
 
     #v(1fr)
 
     #autor
 
+    #if (registro-autor != [] and here().page() == 3) [
+      Reg.: #registro-autor
+    ]
+
     #v(1fr)
 
     #if (guía != []) [
-      #guía \
+      #guía
     ]
-    #ubicación \
+
+    #ubicación
+
     #fecha
   ]
 
@@ -157,13 +190,53 @@
     pagebreak(weak: false)
   }
 
-  counter(page).update(0)
+  counter(page).update(1)
 
   set page(numbering: "i")
 
-  if ((type(abstracto) == content and abstracto != []) or (type(abstracto) == str and abstracto != "")) {
+  if (plan != [] or plan != none) {
     heading([Abstracto], numbering: none)
-    abstracto
+    table(
+      align: (left + horizon, left),
+      columns: 2,
+      [*Título*], título,
+      [*Autor*], autor,
+    )
+
+    if (problemática != []) {
+      heading([Problemática], numbering: none)
+      problemática
+    }
+
+    if (objetivo-general != []) {
+      heading([Objetivo General], numbering: none)
+      objetivo-general
+    }
+
+    if (contenido != []) {
+      heading([Contenido], numbering: none)
+      contenido
+    }
+
+    table(
+      columns: 2,
+      align: (left + horizon, left),
+      [*Carrera*], carrera,
+      [*Guía*], guía,
+      [*Palabras Clave*], palabras-clave.join(", "),
+      [*Correo Electrónico*], email,
+      [*Fecha*], to-string[#fecha],
+    )
+  }
+
+  show heading.where(level: 1): it => {
+    pagebreak()
+    it
+  }
+
+  if ((type(resumen) == content and resumen != []) or (type(resumen) == str and resumen != "")) {
+    heading([Resumen], numbering: none)
+    resumen
   }
 
   if (

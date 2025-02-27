@@ -1,0 +1,19 @@
+on: push
+
+name: Typst
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Typst
+        run: sudo snap install typst
+      - name: Set up fonts
+        run: sudo apt-get install fonts-cascadia-code
+      - name: Versatile APA
+        run: typst compile --root . versatile-apa/template/main.typ
+      - name: "UPSA Bolivia: Estudio de Factibilidad"
+        run: typst compile --root . upsa-bo/estudio-factibilidad/template/estudio-de-factibilidad.typ
+      - name: "UPSA Bolivia: Tesis"
+        run: typst compile --root . upsa-bo/tesis/template/tesis.typ

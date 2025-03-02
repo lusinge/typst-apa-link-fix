@@ -48,6 +48,7 @@
 
   set document(
     title: to-string(título),
+    description: resumen,
     author: to-string(autor).trim(),
     keywords: ("Tesis", "UPSA", "Proyecto de grado") + palabras-clave,
   )
@@ -55,9 +56,8 @@
   set page(
     margin: (
       left: 4cm,
-      bottom: 2.5cm,
       right: 2.5cm,
-      top: 2.5cm,
+      y: 2.5cm,
     ),
     paper: "us-letter",
     number-align: bottom + right,

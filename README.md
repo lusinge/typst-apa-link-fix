@@ -33,6 +33,6 @@ The repository will appear as a reference git repository in your project.
   - [ ] `article`
   - [ ] `report`
   - [ ] `book`
-- [ ] `upsa-bo`
-  - [ ] `estudio-de-factibilidad`
-  - [ ] `tesis`
+- [x] `upsa-bo`
+  - [x] `estudio-de-factibilidad`
+  - [x] `tesis`

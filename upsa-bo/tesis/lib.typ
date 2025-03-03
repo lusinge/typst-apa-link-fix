@@ -187,14 +187,14 @@
     heading([Agradecimientos], numbering: none)
     agradecimientos
   } else {
-    pagebreak(to: "odd")
+    pagebreak(to: "odd", weak: true)
   }
 
   counter(page).update(1)
 
   set page(numbering: "i")
 
-  if (plan != [] or plan != none) {
+  if (plan == [] or plan == none) {
     heading([Abstracto], numbering: none)
     table(
       align: (left + horizon, left),

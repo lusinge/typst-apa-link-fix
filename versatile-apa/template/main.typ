@@ -1,7 +1,9 @@
 #import "../lib.typ": *
 
+#let doc-title = [American Psychological Association (APA) Style Template for Typst]
+
 #show: versatile-apa.with(
-  title: [American Psychological Association (APA) Style Template for Typst],
+  title: doc-title,
 
   // // authors with different affiliations
   // authors: (
@@ -103,7 +105,9 @@
 )
 
 #outline()
+#pagebreak()
 
+= #doc-title
 #include "sections/introduction.typ"
 
 #pagebreak()

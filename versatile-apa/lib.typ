@@ -275,7 +275,7 @@
   show bibliography: set par(first-line-indent: 0in)
 
   if (type(abstract) == content and abstract != []) {
-    heading(level: 1, get-terms(language).Abstract)
+    heading(level: 1, get-terms(language).Abstract, outlined: false)
 
     par(first-line-indent: 0in)[
       #abstract

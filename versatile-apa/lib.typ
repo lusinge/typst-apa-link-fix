@@ -240,7 +240,7 @@
     size: 10pt,
   )
 
-  show raw: set par(leading: 1em)
+  show raw.where(block: true): set par(leading: 1em)
 
   set math.equation(numbering: "(1)")
 

@@ -1,10 +1,12 @@
+#import "../../lib.typ": *
+
 = Computer code
 The template has some support for raw/computer code, but if further customization is wanted, I recommend using #link("https://typst.app/universe/package/codly/")[Codly].
 
 == Code block
 === Code block as a figure
 
-#figure(
+#apa-figure(
   ```py
   def main():
       print("Hello, World!")
@@ -44,4 +46,4 @@ Console.WriteLine("Long line of code that exceeds the width of the page and need
 )
 
 == Inline code
-Inline code can be inserted within a sentence, like this: `print("Hello, World!")`.
+Inline code can be inserted within a sentence, like this: `print("Hello, World!)"`.

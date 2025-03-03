@@ -230,9 +230,13 @@
   )
 
   show raw.where(block: true): block.with(
-    fill: luma(230),
-    inset: 5pt,
-    radius: 10pt,
+    fill: luma(250),
+    stroke: (left: 3pt + rgb("#6272a4")),
+    inset: (x: 10pt, y: 8pt),
+    width: auto,
+    breakable: true,
+    outset: (y: 7pt),
+    radius: (left: 0pt, right: 6pt),
   )
 
   show raw: set text(

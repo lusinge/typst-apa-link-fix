@@ -99,6 +99,7 @@
   language: "en",
   paper-size: "us-letter",
   implicit-introduction-heading: false,
+  abstract-as-description: true,
 )
 
 #outline()

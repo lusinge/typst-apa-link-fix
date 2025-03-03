@@ -33,6 +33,7 @@
 /// - language (str): The language for the document (e.g., "en", "es", "fr").
 /// - paper-size (str): The paper size for the document (e.g., "us-letter", "a4").
 /// - implicit-introduction-heading (bool): Wether to include the paper title at the top of the first page of the text, which acts as a de facto Level 1 heading.
+/// - abstract-as-description (bool): Whether to use the abstract as the document description.
 /// - body (content): The body of the document.
 /// -> content
 #let versatile-apa(
@@ -59,6 +60,7 @@
   language: "en",
   paper-size: "us-letter",
   implicit-introduction-heading: true,
+  abstract-as-description: true,
   body,
 ) = {
   let double-spacing = 1.5em
@@ -74,6 +76,7 @@
     } else {
       to-string(authors).trim(" ", at: start).trim(" ", at: end)
     },
+    description: if abstract-as-description { abstract },
     keywords: keywords,
   )
 

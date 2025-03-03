@@ -21,6 +21,9 @@ The template allows you to easily create academic students for both student and 
   - Spanish
   - Portuguese
   - German
+  - Italian
+  - French
+  - Dutch
 - Headings
 - Raw/computer code
 - Math equations

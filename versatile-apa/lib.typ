@@ -52,7 +52,6 @@
   author-notes: [],
   keywords: (),
   abstract: [],
-  journal: false,
   // Common fields
   font-family: "Libertinus Serif",
   font-size: 12pt,
@@ -293,16 +292,6 @@
   } else if (type(abstract) != content) {
     panic("Invalid abstract type, must of type content: ", type(abstract))
   }
-
-  set page(
-    columns: 2,
-    background: [],
-  ) if (journal)
-
-  set par(
-    first-line-indent: 1em,
-    leading: 0.5em,
-  ) if (journal)
 
   if implicit-introduction-heading {
     heading(level: 1, title)

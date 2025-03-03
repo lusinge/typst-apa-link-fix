@@ -33,7 +33,6 @@
 /// - language (str): The language for the document (e.g., "en", "es", "fr").
 /// - paper-size (str): The paper size for the document (e.g., "us-letter", "a4").
 /// - implicit-introduction-heading (bool): Wether to include the paper title at the top of the first page of the text, which acts as a de facto Level 1 heading.
-/// - toc (bool): Wether to include a table of contents at the beginning of the document.
 /// - body (content): The body of the document.
 /// -> content
 #let versatile-apa(
@@ -60,7 +59,6 @@
   language: "en",
   paper-size: "us-letter",
   implicit-introduction-heading: true,
-  toc: false,
   body,
 ) = {
   let double-spacing = 1.5em
@@ -272,27 +270,6 @@
 
   set bibliography(style: "apa")
   show bibliography: set par(first-line-indent: 0in)
-
-  if (toc) {
-    show outline.entry.where(level: 1): it => {
-      strong(it)
-    }
-
-    show outline.entry.where(level: 2): it => {
-      strong(emph(it))
-    }
-
-    show outline.entry.where(level: 3): it => {
-      emph(it)
-    }
-
-    show outline.entry.where(level: 4): it => {
-      it
-    }
-
-    outline(indent: 2em, depth: 4)
-    pagebreak()
-  }
 
   if (type(abstract) == content and abstract != []) {
     heading(level: 1, get-terms(language).Abstract)

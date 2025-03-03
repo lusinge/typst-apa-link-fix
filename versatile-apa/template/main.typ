@@ -98,9 +98,10 @@
   region: "us",
   language: "en",
   paper-size: "us-letter",
-  implicit-introduction-heading: true,
-  toc: true,
+  implicit-introduction-heading: false,
 )
+
+#outline()
 
 #include "sections/introduction.typ"
 

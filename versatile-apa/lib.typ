@@ -277,7 +277,7 @@
   set bibliography(style: "apa")
   show bibliography: set par(first-line-indent: 0in)
 
-  if (type(abstract) == content and abstract != []) {
+  if ((type(abstract) == content or type(abstract) == str) and (abstract != [] and abstract != "")) {
     heading(level: 1, get-terms(language).Abstract, outlined: false)
 
     par(first-line-indent: 0in)[
@@ -289,8 +289,11 @@
     keywords.map(it => it).join(", ")
 
     pagebreak()
-  } else if (type(abstract) != content) {
-    panic("Invalid abstract type, must of type content: ", type(abstract))
+  } else {
+    panic(
+      "Invalid abstract, abstract must be content or string, and not be empty. Type is " + type(abstract),
+      "Abstract input is: " + abstract,
+    )
   }
 
   if implicit-introduction-heading {

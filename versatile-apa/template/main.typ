@@ -90,9 +90,7 @@
     #lorem(50)
   ],
   keywords: ("APA", "template", "Typst"),
-  abstract: [
-    #lorem(100)
-  ],
+  abstract: lorem(100),
 
   // Common fields
   font-family: "Libertinus Serif",

@@ -3,10 +3,17 @@ name: Typst Build
 on:
   push:
     paths:
-      - 'versatile-apa/**'
-      - 'upsa-bo/**'
-      - '.github/workflows/typst.yml'
-  workflow_dispatch:  # Allow manual triggering
+      - "versatile-apa/**"
+      - "upsa-bo/**"
+      - ".github/workflows/typst.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "versatile-apa/**"
+      - "upsa-bo/**"
+      - ".github/workflows/typst.yml"
+  workflow_dispatch: # Allow manual triggering
 
 jobs:
   build:

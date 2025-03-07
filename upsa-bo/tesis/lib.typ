@@ -17,7 +17,6 @@
   objetivo-general: [],
   contenido: [],
   grado: [Licenciatura],
-  información: [],
   email: "",
   agradecimientos: [],
   resumen-ejecutivo: [],

@@ -29,20 +29,8 @@
 ) = {
   if (autor == []) {
     panic("El autor es obligatorio: ", autor)
-  } else if (carrera == []) {
-    panic("La carrera es obligatoria: ", carrera)
-  } else if (facultad == []) {
-    panic("La facultad es obligatoria: ", facultad)
   } else if (título == []) {
     panic("El título es obligatorio: ", título)
-  } else if (registro-autor == []) {
-    panic("El registro del autor es obligatorio: ", registro-autor)
-  } else if (guía == []) {
-    panic("Tutor guía es obligatorio: ", guía)
-  } else if (email == "") {
-    panic("El correo electrónico es obligatorio", email)
-  } else if (palabras-clave == ()) {
-    panic("Las palabras clave son obligatorias", palabras-clave)
   }
 
   set document(

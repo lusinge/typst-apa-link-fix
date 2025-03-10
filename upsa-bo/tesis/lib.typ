@@ -243,6 +243,7 @@
 
     outline(
       title: [Índice General],
+      target: heading.where(outlined: true).or(figure.where(kind: "part")),
       indent: 0em,
     )
   }
@@ -290,6 +291,12 @@
 
   body
 }
+
+#let parte(título) = figure(
+  kind: "part",
+  supplement: [Parte],
+  caption: título,
+)[]
 
 #let contenido-principal(
   body,

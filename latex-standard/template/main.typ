@@ -1,9 +1,9 @@
 #import "../lib.typ": *
 
-#show: latex-standard.with(
+#show: article.with(
   class: "report",
   title: [LaTeX Standard/Base Class/Template for Typst and Authoring],
-  author: [Jassiel Ovando Franco],
+  author: [Name],
   make-title: true,
   table-of-contents: true,
 )

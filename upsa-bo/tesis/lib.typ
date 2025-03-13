@@ -289,14 +289,32 @@
 
   set bibliography(style: "american-psychological-association")
 
+  // Part section settings
+  show figure.where(kind: "part"): set figure.caption(separator: [---])
+
+  show figure.where(kind: "part"): it => {
+    set page(
+      numbering: none,
+      header: none,
+    )
+    set text(size: 3.25em, weight: "bold")
+    align(horizon + center)[
+      Parte
+      #context counter(figure.where(kind: "part")).display("I")
+
+      #it.caption.body
+    ]
+  }
+
   body
 }
 
 #let parte(título) = figure(
+  [],
   kind: "part",
   supplement: [Parte],
   caption: título,
-)[]
+)
 
 #let contenido-principal(
   body,

@@ -364,6 +364,7 @@
   body,
 ) = (
   context {
+    show heading: set heading(numbering: "I.1.")
     show heading.where(level: 1): it => {
       {
         set page(
@@ -403,7 +404,7 @@
                 font: "Libertinus Serif",
                 size: 2.5em,
                 weight: "regular",
-              )[#it.body]
+              )[#smallcaps(it.body)]
             ]
           ]
 
@@ -419,7 +420,7 @@
         ]
       }
 
-      it
+      smallcaps(it)
     }
 
     body
@@ -432,7 +433,7 @@
   context {
     counter(heading).update(0)
     show heading: set heading(supplement: [Anexo])
-    show heading: set heading(numbering: "A.")
+    show heading: set heading(numbering: "A.1.")
 
     show heading.where(level: 1): it => {
       {
@@ -473,7 +474,7 @@
                 font: "Libertinus Serif",
                 size: 2.5em,
                 weight: "regular",
-              )[#it.body]
+              )[#smallcaps(it.body)]
             ]
           ]
 
@@ -489,7 +490,7 @@
         ]
       }
 
-      it
+      smallcaps(it)
     }
 
     body

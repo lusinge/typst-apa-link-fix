@@ -297,12 +297,56 @@
       numbering: none,
       header: none,
     )
-    set text(size: 3.25em, weight: "bold")
-    align(horizon + center)[
-      Parte
-      #context counter(figure.where(kind: "part")).display("I")
 
-      #it.caption.body
+    align(horizon + center)[
+      #line(length: 75%, stroke: 0.5pt)
+
+      #v(1fr)
+
+      #text(
+        font: "Libertinus Sans",
+        size: 1.3em,
+        weight: "regular",
+        tracking: 0.1em,
+        fill: gray.darken(40%),
+      )[PARTE]
+
+      #v(0.8cm)
+      #align(center)[
+        #polygon(
+          fill: gray.darken(20%),
+          (0pt, 3pt),
+          (3pt, 0pt),
+          (0pt, -3pt),
+          (-3pt, 0pt),
+        )
+      ]
+      #v(0.8cm)
+
+      #text(
+        font: "Libertinus Serif",
+        size: 4.8em,
+        weight: "bold",
+        fill: black,
+      )[#context counter(figure.where(kind: "part")).display("I")]
+
+      #v(2cm)
+
+      #block(width: 70%)[
+        #align(center)[
+          #text(
+            font: "Libertinus Serif",
+            size: 2.2em,
+            weight: "regular",
+            style: "italic",
+            fill: black,
+          )[#it.caption.body]
+        ]
+      ]
+
+      #v(1fr)
+
+      #line(length: 75%, stroke: 0.5pt)
     ]
   }
 
@@ -330,14 +374,54 @@
         set par(spacing: 1.5em)
 
         align(center + horizon)[
-          #text(size: 2.25em)[#it.supplement #context counter(heading).display("I").trim(".")]
+          // Top decorative line
+          #line(length: 55%, stroke: 0.4pt)
 
-          #text(size: 2.75em)[#it.body]
+          #v(2cm)
+
+          #text(
+            font: "Libertinus Sans",
+            size: 1.2em,
+            weight: "regular",
+            tracking: 0.1em,
+            fill: gray.darken(30%),
+          )[#it.supplement]
+
+          #v(0.5cm)
+
+          #text(
+            font: "Libertinus Serif",
+            size: 3.5em,
+            weight: "bold",
+          )[#context counter(heading).display("I").trim(".")]
+
+          #v(1.2cm)
+
+          #block(width: 75%)[
+            #align(center)[
+              #text(
+                font: "Libertinus Serif",
+                size: 2.5em,
+                weight: "regular",
+              )[#it.body]
+            ]
+          ]
+
+          #v(2cm)
+
+          #polygon(
+            fill: gray.darken(15%),
+            (0pt, 3pt),
+            (3pt, 0pt),
+            (0pt, -3pt),
+            (-3pt, 0pt),
+          )
         ]
       }
 
       it
     }
+
     body
   }
 )
@@ -360,9 +444,48 @@
         set par(spacing: 1.5em)
 
         align(center + horizon)[
-          #text(size: 2.25em)[#it.supplement #counter(heading).display().trim(".")]
+          // Top decorative line
+          #line(length: 55%, stroke: 0.4pt)
 
-          #text(size: 2.75em)[#it.body]
+          #v(2cm)
+
+          #text(
+            font: "Libertinus Sans",
+            size: 1.2em,
+            weight: "regular",
+            tracking: 0.1em,
+            fill: gray.darken(30%),
+          )[#it.supplement]
+
+          #v(0.5cm)
+
+          #text(
+            font: "Libertinus Serif",
+            size: 3.5em,
+            weight: "bold",
+          )[#context counter(heading).display().trim(".")]
+
+          #v(1.2cm)
+
+          #block(width: 75%)[
+            #align(center)[
+              #text(
+                font: "Libertinus Serif",
+                size: 2.5em,
+                weight: "regular",
+              )[#it.body]
+            ]
+          ]
+
+          #v(2cm)
+
+          #polygon(
+            fill: gray.darken(15%),
+            (0pt, 3pt),
+            (3pt, 0pt),
+            (0pt, -3pt),
+            (-3pt, 0pt),
+          )
         ]
       }
 

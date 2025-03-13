@@ -1,46 +1,56 @@
-\documentclass[titlepage]{article}
+\documentclass[titlepage,a4paper]{article}
 
 \usepackage{lipsum}
 \setlipsum{auto-lang=false}
 
+\usepackage{pgffor}
 
 
 \begin{document}
-\title{Paper Title}
+\title{LaTeX Standard/Base Class/Template for Typst and Authoring}
 \author{Author Name}
 \date{\today}
 
 \maketitle
 
 \tableofcontents
+\clearpage
 
-\begin{abstract}
+\foreach \i in {1,...,5} {
+    \section{Section \i}
+    \lipsum[1]
+  }
+
+\foreach \i in {1,...,5} {
+    \subsection{Subsection \i}
+    \lipsum[1]
+  }
+
+\foreach \i in {1,...,5} {
+    \subsubsection{Subsubsection \i}
+    \lipsum[1]
+  }
+
+\foreach \i in {1,...,5} {
+    \paragraph{Paragraph \i}
+    \lipsum[1]
+
+    \lipsum[1]
+  }
+
+\foreach \i in {1,...,5} {
+    \subparagraph{Subparagraph \i}
+    \lipsum[1]
+
+    \lipsum[1]
+  }
+
+\clearpage
+\subsection{Subparagraph Final}
 \lipsum[1]
-\lipsum[]
-\end{abstract}
 
-\section{Introduction}
-\lipsum[0]
-
-\subsection{Subsection 1}
+\subsection{Final}
 \lipsum[1]
 
-\section{Conclusion}
-\lipsum[10]
-
-\subsection{Subsection 2}
-\lipsum[13]
-
-\subsubsection{Subsubsection 1}
-\lipsum[16]
-
-\paragraph{Paragraph 1}
-\lipsum[20]
-
-\subparagraph{Subparagraph 1}
-\lipsum[22]
-
-\section{References}
-\lipsum[25]
-
+\lipsum[1]
 \end{document}

@@ -18,3 +18,5 @@
 *.run.xml
 *.blg
 *.dvi
+*.lot
+*.lof

@@ -62,8 +62,7 @@
   )
 
   if (make-title) {
-    rect()[
-      #set align(center)
+    align(center)[
       #v(1fr)
 
       #text(size: font-size.LARGE, title)

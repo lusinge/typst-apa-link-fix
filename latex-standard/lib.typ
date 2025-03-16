@@ -92,7 +92,7 @@
   // Section
   show heading.where(level: 1): set text(size: font-size.Large, weight: "bold") if class == "article"
   show heading.where(level: 1): set block(above: 3.5 * 0.5em, below: 2.3 * 0.5em) if class == "article"
-  show heading.where(level: 1): set heading(numbering: "1.1") if class == "article"
+  set heading(numbering: "1.1") if class == "article"
 
   // Subsection
   show heading.where(level: 2): set text(size: font-size.large, weight: "bold") if class == "article"

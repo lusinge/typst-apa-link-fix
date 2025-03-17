@@ -28,11 +28,14 @@ The repository will appear as a reference git repository in your project.
 
 ### Typst Universe
 
-- [x] `versatile-apa:7.0.0`: [Versatile APA in Typst Universe](https://typst.app/universe/package/versatile-apa/)
+Available in Typst Universe or usable.
+
+- [x] `versatile-apa:7.1.1`: [Versatile APA in Typst Universe](https://typst.app/universe/package/versatile-apa/)
 - [ ] `latex-std`
   - [ ] `article`
   - [ ] `report`
   - [ ] `book`
+- [ ] `koma-script`
 - [x] `upsa-bo`
   - [x] `estudio-de-factibilidad`
   - [x] `tesis`

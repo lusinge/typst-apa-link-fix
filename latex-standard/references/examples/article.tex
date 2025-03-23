@@ -1,6 +1,7 @@
-\documentclass[titlepage,a4paper]{article}
+\documentclass[titlepage,a4paper,12pt]{article}
 
 \usepackage{lipsum}
+\usepackage{layout}
 \setlipsum{auto-lang=false}
 
 \usepackage{pgffor}
@@ -15,6 +16,8 @@
 
 \tableofcontents
 \clearpage
+
+\layout
 
 \foreach \i in {1,...,5} {
     \section{Section \i}

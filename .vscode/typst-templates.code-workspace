@@ -19,6 +19,10 @@
 		{
 			"path": "../latex-standard",
 			"name": "LaTeX Standard"
+		},
+		{
+			"path": "../koma-script",
+			"name": "KOMA-Script"
 		}
 	],
 	"settings": {
@@ -45,6 +49,7 @@
 			"hline",
 			"inbook",
 			"ixpt",
+			"koma",
 			"Libertinus",
 			"linebreak",
 			"linebreaks",
@@ -60,7 +65,10 @@
 			"Reinversiones",
 			"repr",
 			"rowspan",
+			"scrartcl",
+			"scrbook",
 			"scriptsize",
+			"scrreprt",
 			"smallcaps",
 			"Sociodemographic",
 			"subsubsection",

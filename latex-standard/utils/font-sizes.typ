@@ -10,15 +10,15 @@
   xivpt: 14.4pt,
   xviipt: 17.28pt,
   xxpt: 20.74pt,
-  xxvpt: 24.88pt
+  xxvpt: 24.88pt,
 )
 
 #let font-10pt = (
   margin: (
-    top: 1.725in,
-    bottom: 1.65in,
-    left: 1.85in,
-    right: 1.865in,
+    left: 1in + 62pt,
+    right: 100% - 1in - 62pt - 345pt,
+    top: 1in + 16pt + 12pt + 25pt,
+    bottom: 100% - 1in - 16pt - 12pt - 25pt - 550pt,
   ),
   tiny: font-sizes.vpt,
   scriptsize: font-sizes.viipt,
@@ -29,7 +29,7 @@
   Large: font-sizes.xivpt,
   LARGE: font-sizes.xviipt,
   huge: font-sizes.xxpt,
-  Huge: font-sizes.xxvpt
+  Huge: font-sizes.xxvpt,
 )
 
 #let font-11pt = (
@@ -43,7 +43,7 @@
   Large: font-sizes.xivpt,
   LARGE: font-sizes.xviipt,
   huge: font-sizes.xxpt,
-  Huge: font-sizes.xxvpt
+  Huge: font-sizes.xxvpt,
 )
 
 #let font-12pt = (
@@ -57,5 +57,5 @@
   Large: font-sizes.xviipt,
   LARGE: font-sizes.xxpt,
   huge: font-sizes.xxvpt,
-  Huge: font-sizes.xxvpt
+  Huge: font-sizes.xxvpt,
 )

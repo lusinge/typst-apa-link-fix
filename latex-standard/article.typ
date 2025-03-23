@@ -1,5 +1,5 @@
 #import "@preview/drafting:0.2.0": *
-#import "showframe.typ": background
+#import "utils/showframe.typ": background
 #import "utils/font-sizes.typ": *
 #import "./utils/to-string.typ": *
 

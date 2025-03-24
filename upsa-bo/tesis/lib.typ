@@ -238,7 +238,6 @@
   }
 
   show heading.where(level: 1): set heading(supplement: [Parte])
-  show heading.where(level: 2): set heading(supplement: [Capítulo])
 
   {
     show outline.entry.where(level: 1): it => link(
@@ -322,6 +321,7 @@
   body,
 ) = (
   context {
+    show heading.where(level: 2): set heading(supplement: [Capítulo])
     set heading(numbering: (first, ..n) => (numbering("I.1.", ..n)))
     show heading.where(level: 1): it => {
       {
@@ -399,7 +399,6 @@
         set par(spacing: 1.5em)
 
         align(center + horizon)[
-          // Top decorative line
           #line(length: 55%, stroke: 0.4pt)
 
           #v(2cm)
@@ -418,7 +417,7 @@
             font: "Libertinus Serif",
             size: 3.5em,
             weight: "bold",
-          )[#context counter(heading).display("I").trim(".")]
+          )[#context chapter-counter.display("I").trim(".")]
 
           #v(1.2cm)
 
@@ -456,7 +455,8 @@
 ) = (
   context {
     counter(heading).update(0)
-    show heading: set heading(supplement: [Anexo])
+    chapter-counter.update(0)
+    set heading(supplement: [Anexo])
     set heading(numbering: (first, ..n) => (numbering("A.1.", ..n)))
 
     show heading.where(level: 1): it => {
@@ -554,7 +554,7 @@
             font: "Libertinus Serif",
             size: 3.5em,
             weight: "bold",
-          )[#context counter(heading).display().trim(".")]
+          )[#context chapter-counter.display().trim(".")]
 
           #v(1.2cm)
 

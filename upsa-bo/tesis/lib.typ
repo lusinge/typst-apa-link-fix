@@ -1,6 +1,8 @@
 #import "@preview/hydra:0.6.0": hydra
 #import "./utils/to-string.typ": *
 
+#let chapter-counter = counter("chapter")
+
 #let tesis(
   título: [],
   facultad: [],
@@ -43,8 +45,7 @@
   set page(
     margin: (
       left: 4cm,
-      right: 2.5cm,
-      y: 2.5cm,
+      rest: 2.5cm,
     ),
     paper: "us-letter",
     number-align: bottom + right,
@@ -182,7 +183,7 @@
   set page(numbering: "i")
 
   if (plan == [] or plan == none) {
-    heading([Abstracto], numbering: none)
+    heading(numbering: none, level: 2)[Abstracto]
     table(
       align: (left + horizon, left),
       columns: 2,
@@ -216,8 +217,8 @@
     )
   }
 
-  show heading.where(level: 1): it => {
-    pagebreak()
+  show heading.where(level: 1).or(heading.where(level: 2)): it => {
+    pagebreak(weak: true)
     it
   }
 
@@ -236,14 +237,38 @@
     resumen-ejecutivo
   }
 
+  show heading.where(level: 1): set heading(supplement: [Parte])
+  show heading.where(level: 2): set heading(supplement: [Capítulo])
+
   {
-    show outline.entry.where(level: 1): it => strong(it)
-    show outline.entry.where(level: 2): it => strong(emph(it))
-    show outline.entry.where(level: 3): it => emph(it)
+    show outline.entry.where(level: 1): it => link(
+      it.element.location(),
+      upper(
+        strong(
+          it.indented(
+            if it.element.numbering != none [ #it.element.supplement #it.prefix()] else { it.prefix() },
+            [#it.body() #h(1fr) #it.page()],
+          ),
+        ),
+      ),
+    )
+    show outline.entry.where(level: 2): it => link(
+      it.element.location(),
+      smallcaps(
+        strong(
+          it.indented(
+            if it.element.numbering != none [ #it.element.supplement #it.prefix()] else { it.prefix() },
+            [#it.body() #h(1fr) #it.page()],
+          ),
+        ),
+      ),
+    )
+    show outline.entry.where(level: 3): it => strong(it)
+    show outline.entry.where(level: 4): it => strong(emph(it))
 
     outline(
       title: [Índice General],
-      target: heading.where(outlined: true).or(figure.where(kind: "part")),
+      depth: 4,
       indent: 0em,
     )
   }
@@ -283,90 +308,89 @@
 
   set page(numbering: "1")
 
-  show heading.where(level: 1): set heading(supplement: [Capítulo])
-
-  set page(header: context hydra(1, display: (_, it) => upper(it.body)))
+  set page(header: context hydra(2, display: (_, it) => upper(it.body)))
 
   set bibliography(style: "american-psychological-association")
 
   // Part section settings
-  show figure.where(kind: "part"): set figure.caption(separator: [---])
-
-  show figure.where(kind: "part"): it => {
-    set page(
-      numbering: none,
-      header: none,
-    )
-
-    align(horizon + center)[
-      #line(length: 75%, stroke: 0.5pt)
-
-      #v(1fr)
-
-      #text(
-        font: "Libertinus Sans",
-        size: 1.3em,
-        weight: "regular",
-        tracking: 0.1em,
-        fill: gray.darken(40%),
-      )[PARTE]
-
-      #v(0.8cm)
-      #align(center)[
-        #polygon(
-          fill: gray.darken(20%),
-          (0pt, 3pt),
-          (3pt, 0pt),
-          (0pt, -3pt),
-          (-3pt, 0pt),
-        )
-      ]
-      #v(0.8cm)
-
-      #text(
-        font: "Libertinus Serif",
-        size: 4.8em,
-        weight: "bold",
-        fill: black,
-      )[#context counter(figure.where(kind: "part")).display("I")]
-
-      #v(2cm)
-
-      #block(width: 70%)[
-        #align(center)[
-          #text(
-            font: "Libertinus Serif",
-            size: 2.2em,
-            weight: "regular",
-            style: "italic",
-            fill: black,
-          )[#it.caption.body]
-        ]
-      ]
-
-      #v(1fr)
-
-      #line(length: 75%, stroke: 0.5pt)
-    ]
-  }
+  show heading.where(level: 1): set heading(numbering: "I.")
 
   body
 }
-
-#let parte(título) = figure(
-  [],
-  kind: "part",
-  supplement: [Parte],
-  caption: título,
-)
 
 #let contenido-principal(
   body,
 ) = (
   context {
-    show heading: set heading(numbering: "I.1.")
+    set heading(numbering: (first, ..n) => (numbering("I.1.", ..n)))
     show heading.where(level: 1): it => {
       {
+        set page(
+          numbering: none,
+          header: none,
+        )
+
+        align(horizon + center)[
+          #line(length: 75%, stroke: 0.5pt)
+
+          #v(1fr)
+
+          #text(
+            font: "Libertinus Sans",
+            size: 1.3em,
+            weight: "regular",
+            tracking: 0.1em,
+            fill: gray.darken(40%),
+          )[PARTE]
+
+          #v(0.8cm)
+          #align(center)[
+            #polygon(
+              fill: gray.darken(20%),
+              (0pt, 3pt),
+              (3pt, 0pt),
+              (0pt, -3pt),
+              (-3pt, 0pt),
+            )
+          ]
+          #v(0.8cm)
+
+          #text(
+            font: "Libertinus Serif",
+            size: 4.8em,
+            weight: "bold",
+            fill: black,
+          )[#counter(heading).display("I")]
+
+          #v(2cm)
+
+          #block(width: 70%)[
+            #align(center)[
+              #text(
+                font: "Libertinus Serif",
+                size: 2.2em,
+                weight: "regular",
+                style: "italic",
+                fill: black,
+              )[#it.body]
+            ]
+          ]
+
+          #v(1fr)
+
+          #line(length: 75%, stroke: 0.5pt)
+
+        ]
+      }
+
+      it
+
+      let chapters = chapter-counter.get()
+      counter(heading).update((one, ..n) => (one, ..chapters))
+    }
+    show heading.where(level: 2): it => {
+      {
+        chapter-counter.step(level: 1)
         set page(
           numbering: none,
           header: none,
@@ -433,7 +457,7 @@
   context {
     counter(heading).update(0)
     show heading: set heading(supplement: [Anexo])
-    show heading: set heading(numbering: "A.1.")
+    set heading(numbering: (first, ..n) => (numbering("A.1.", ..n)))
 
     show heading.where(level: 1): it => {
       {
@@ -442,10 +466,76 @@
           header: none,
         )
 
+        align(horizon + center)[
+          #line(length: 75%, stroke: 0.5pt)
+
+          #v(1fr)
+
+          #text(
+            font: "Libertinus Sans",
+            size: 1.3em,
+            weight: "regular",
+            tracking: 0.1em,
+            fill: gray.darken(40%),
+          )[PARTE]
+
+          #v(0.8cm)
+          #align(center)[
+            #polygon(
+              fill: gray.darken(20%),
+              (0pt, 3pt),
+              (3pt, 0pt),
+              (0pt, -3pt),
+              (-3pt, 0pt),
+            )
+          ]
+          #v(0.8cm)
+
+          #text(
+            font: "Libertinus Serif",
+            size: 4.8em,
+            weight: "bold",
+            fill: black,
+          )[#counter(heading).display("I")]
+
+          #v(2cm)
+
+          #block(width: 70%)[
+            #align(center)[
+              #text(
+                font: "Libertinus Serif",
+                size: 2.2em,
+                weight: "regular",
+                style: "italic",
+                fill: black,
+              )[#it.body]
+            ]
+          ]
+
+          #v(1fr)
+
+          #line(length: 75%, stroke: 0.5pt)
+
+        ]
+      }
+
+      it
+
+      let chapters = chapter-counter.get()
+      counter(heading).update((one, ..n) => (one, ..chapters))
+    }
+
+    show heading.where(level: 2): it => {
+      {
+        chapter-counter.step(level: 1)
+        set page(
+          numbering: none,
+          header: none,
+        )
+
         set par(spacing: 1.5em)
 
         align(center + horizon)[
-          // Top decorative line
           #line(length: 55%, stroke: 0.4pt)
 
           #v(2cm)

@@ -12,6 +12,23 @@
 )
 
 #contenido-principal[
-  = Introducción
+  = Parte 1
   #lorem(50)
+
+  == Capítulo 1
+
+  == Capítulo 2
+
+  = Parte 2
+
+  == Capítulo 3
+
+  == Capítulo 4
+
+  === Sección 1
+]
+
+#anexos[
+  == Primer anexo
+  == Segundo anexo
 ]

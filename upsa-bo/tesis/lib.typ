@@ -172,7 +172,7 @@
   portada
 
   if (agradecimientos != []) {
-    heading([Agradecimientos], numbering: none)
+    heading([Agradecimientos], numbering: none, level: 2)
     agradecimientos
   } else {
     pagebreak(to: "odd", weak: true)
@@ -192,17 +192,17 @@
     )
 
     if (problemática != []) {
-      heading([Problemática], numbering: none)
+      heading([Problemática], numbering: none, level: 2)
       problemática
     }
 
     if (objetivo-general != []) {
-      heading([Objetivo General], numbering: none)
+      heading([Objetivo General], numbering: none, level: 2)
       objetivo-general
     }
 
     if (contenido != []) {
-      heading([Contenido], numbering: none)
+      heading([Contenido], numbering: none, level: 2)
       contenido
     }
 
@@ -223,7 +223,7 @@
   }
 
   if ((type(resumen) == content and resumen != []) or (type(resumen) == str and resumen != "")) {
-    heading([Resumen], numbering: none)
+    heading([Resumen], numbering: none, level: 2)
     resumen
   }
 
@@ -233,7 +233,7 @@
         type(resumen-ejecutivo) == str and resumen-ejecutivo != ""
       )
   ) {
-    heading([Resumen Ejecutivo], numbering: none)
+    heading([Resumen Ejecutivo], numbering: none, level: 2)
     resumen-ejecutivo
   }
 
@@ -383,8 +383,6 @@
         ]
       }
 
-      it
-
       let chapters = chapter-counter.get()
       counter(heading).update((one, ..n) => (one, ..chapters))
     }
@@ -518,8 +516,6 @@
 
         ]
       }
-
-      it
 
       let chapters = chapter-counter.get()
       counter(heading).update((one, ..n) => (one, ..chapters))

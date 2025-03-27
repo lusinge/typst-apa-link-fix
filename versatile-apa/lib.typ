@@ -286,8 +286,7 @@
         #abstract
       ]
 
-      emph(get-terms(language).Keywords)
-      [: ]
+      emph[#get-terms(language).Keywords: ]
       keywords.map(it => it).join(", ")
 
       pagebreak()

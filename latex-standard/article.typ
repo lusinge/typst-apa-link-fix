@@ -77,9 +77,6 @@
       #v(1fr)
     ]
 
-    if (class != "article") {
-      pagebreak()
-    }
   }
 
   //TODO: Chapters shouldn't be available if the class is article.

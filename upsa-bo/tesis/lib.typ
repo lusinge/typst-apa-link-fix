@@ -110,7 +110,7 @@
 
   show heading: set text(size: 12pt)
   show heading: set block(spacing: 2em)
-  show heading: set par(leading: 1.5em)
+  show heading: set par(leading: 1.5em, spacing: 2em)
 
   let portada = context align(center)[
     #set text(weight: "bold")
@@ -268,7 +268,7 @@
     outline(
       title: [Índice General],
       depth: 4,
-      indent: 0em,
+      indent: 0.75em,
     )
   }
 

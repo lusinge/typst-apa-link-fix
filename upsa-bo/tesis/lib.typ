@@ -136,7 +136,7 @@
       #v(1fr)
     ]
 
-    #rect(radius: 20%, inset: 10pt)[_"#título"_]
+    #rect(radius: 20%, inset: 10pt)[_«#título»_]
 
     #if (here().page() == 3 and portada-externa) [
       #v(1fr)
@@ -453,7 +453,7 @@
   body,
 ) = (
   context {
-    counter(heading).update(0)
+    counter(heading.where(level: 1)).update(0)
     chapter-counter.update(0)
     set heading(supplement: [Anexo])
     set heading(numbering: (first, ..n) => (numbering("A.1.", ..n)))
@@ -551,7 +551,7 @@
             font: "Libertinus Serif",
             size: 3.5em,
             weight: "bold",
-          )[#context chapter-counter.display().trim(".")]
+          )[#context chapter-counter.display("A").trim(".")]
 
           #v(1.2cm)
 

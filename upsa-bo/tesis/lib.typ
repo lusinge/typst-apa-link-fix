@@ -309,9 +309,6 @@
 
   set page(header: context hydra(2, display: (_, it) => upper(it.body)))
 
-  set bibliography(style: "american-psychological-association")
-  show bibliography: set heading(level: 2)
-
   // Part section settings
   show heading.where(level: 1): set heading(numbering: "I.")
 

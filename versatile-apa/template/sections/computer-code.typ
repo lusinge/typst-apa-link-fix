@@ -46,4 +46,4 @@ Console.WriteLine("Long line of code that exceeds the width of the page and need
 )
 
 == Inline code
-Inline code can be inserted within a sentence, like this: `print("Hello, World!)"`.
+Inline code can be inserted within a sentence, like this: `print("Hello, World!")`.

@@ -260,16 +260,28 @@
     let quote-text = to-string(it.body)
     let quote-text-words = to-string(it.body).split(" ").len()
 
-    if quote-text-words <= 40 {
+    if quote-text-words < 40 {
       set quote(block: false)
-      [
-        "#quote-text.trim(" ")"~#it.attribution.
+
+      ["#quote-text.trim()"]
+
+      if (type(it.attribution) == label) [
+        #cite(it.attribution)
+      ] else if (
+        type(it.attribution) == str or type(it.attribution) == content
+      ) [
+        #it.attribution
       ]
     } else {
       set quote(block: true)
       set par(hanging-indent: 0.5in)
-      [
-        #quote-text.trim(" ")~#it.attribution
+
+      quote-text.trim()
+
+      if (type(it.attribution) == label) [
+        #cite(it.attribution)
+      ] else if (type(it.attribution) == str or type(it.attribution) == content) [
+        #it.attribution
       ]
     }
   }

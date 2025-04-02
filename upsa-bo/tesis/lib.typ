@@ -99,11 +99,6 @@
 
   set par(spacing: 2em)
 
-  show quote: set par(
-    leading: 1.5em,
-    spacing: 2em,
-  )
-
   show quote: set pad(left: 0.5in)
   show quote: set block(spacing: 1.5em)
 
@@ -125,7 +120,7 @@
       ]
     } else {
       set quote(block: true)
-      set par(hanging-indent: 0.5in)
+      set par(hanging-indent: 0.5in, first-line-indent: 0.5in)
 
       quote-text.trim()
 

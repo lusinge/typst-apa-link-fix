@@ -27,6 +27,8 @@
   portada-externa: true,
   ubicación: "Santa Cruz de la Sierra, Bolivia",
   fecha: datetime.today().year(),
+  tamaño-fuente: 11pt,
+  estilo-fuente: "Libertinus Serif",
   body,
 ) = {
   if (autor == []) {
@@ -52,13 +54,13 @@
   )
 
   set text(
-    size: 12pt,
-    font: "Libertinus Serif",
+    size: tamaño-fuente,
+    font: estilo-fuente,
     lang: "es",
     region: "bo",
   )
 
-  set par(leading: 1.5em)
+  set par(leading: 1.5em, spacing: 2em)
 
   set math.equation(numbering: "(1)", supplement: [Expresión Matemática])
 
@@ -134,9 +136,18 @@
 
   set heading(numbering: "1.")
 
-  show heading: set text(size: 12pt)
+  show heading: set text(size: 1em)
   show heading: set block(spacing: 2em)
-  show heading: set par(leading: 1.5em, spacing: 2em)
+
+  show heading.where(level: 3): set align(center)
+  show heading.where(level: 3): smallcaps
+  show heading.where(level: 5): emph
+  show heading.where(level: 6): it => [
+    #it.body.
+  ]
+  show heading.where(level: 7): it => [
+    _#it.body._
+  ]
 
   let portada = context align(center)[
     #set text(weight: "bold")
@@ -465,7 +476,7 @@
         ]
       }
 
-      smallcaps(it)
+      // align(center, smallcaps(it))
     }
 
     body
@@ -600,7 +611,7 @@
         ]
       }
 
-      smallcaps(it)
+      // align(center, smallcaps(it))
     }
 
     body

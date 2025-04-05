@@ -122,7 +122,7 @@
       ]
     } else {
       set quote(block: true)
-      set par(hanging-indent: 0.5in, first-line-indent: 0.5in)
+      set par(hanging-indent: 0.5in, first-line-indent: (amount: 0.5in, all: true))
 
       quote-text.trim()
 

@@ -97,6 +97,18 @@
     spacing: 2em,
   )
 
+  set table(
+    stroke: (x, y) => if y == 0 {
+      (
+        top: (thickness: 1pt, dash: "solid"),
+        bottom: (thickness: 1pt, dash: "solid"),
+      )
+    },
+  )
+
+  show table.cell.where(y: 0): strong
+
+
   show figure: set block(breakable: true)
 
   set par(spacing: 2em)

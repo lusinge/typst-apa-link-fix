@@ -14,6 +14,10 @@ Referencing @fig:sample-bar-graph.
   label: "fig:sample-bar-graph",
 )
 
+fwwef
+
+#apa-figure(rect[hello], placement:bottom, caption: [wefewefewf])
+
 #pagebreak()
 == Sample line graph
 Referencing @fig:sample-line-graph.

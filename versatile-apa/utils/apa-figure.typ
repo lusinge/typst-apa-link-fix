@@ -8,7 +8,7 @@
   kind: auto,
   numbering: "1",
   outlined: true,
-  placement: none,
+  placement: auto,
   scope: "column",
   supplement: auto,
   note: none,

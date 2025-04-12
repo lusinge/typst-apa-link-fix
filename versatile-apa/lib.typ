@@ -191,11 +191,6 @@
 
   show figure: set block(breakable: true)
 
-  show figure: it => {
-    it.caption
-    align(center, it.body)
-  }
-
   set figure(
     gap: double-spacing,
     placement: none,

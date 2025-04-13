@@ -103,10 +103,15 @@
     spacing: double-spacing,
   )
 
-  show link: set text(fill: blue)
-
   show link: it => {
-    underline(it.body)
+    if type(it.dest) != str {
+      set text(luma(0%))
+      it
+    }
+    else {
+      set text(fill: blue)
+      underline(it)
+    }
   }
 
   if running-head != none and running-head != [] and running-head != "" {

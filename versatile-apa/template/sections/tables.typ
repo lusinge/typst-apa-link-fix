@@ -16,13 +16,11 @@ Referencing @table:sample-demographic-characteristics.
     },
     columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
     table.header(
-      table.hline(),
       table.cell(rowspan: 2)[Baseline characteristic],
       table.cell(colspan: 2)[Guided self-help],
       table.cell(colspan: 2)[Unguided self-help],
       table.cell(colspan: 2)[Wait-list control],
       table.cell(colspan: 2)[Full sample],
-      table.hline(),
       [n],
       [%],
       [n],
@@ -87,14 +85,12 @@ Referencing @table:sample-results-of-several-t-tests.
     },
     columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
     table.header(
-      table.hline(),
       table.cell(rowspan: 2)[Logistic parameter],
       table.cell(colspan: 2)[9-year-olds],
       table.cell(colspan: 2)[16-year-olds],
       table.cell(rowspan: 2)[$t(40)$],
       table.cell(rowspan: 2)[$p$],
       table.cell(rowspan: 2)[Cohen's $d$],
-      table.hline(),
       [M],
       [SD],
       [M],
@@ -127,7 +123,6 @@ Referencing @table:sample-correlation.
       center
     },
     columns: (auto, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-    table.hline(),
     table.header(
       [Variable],
       [_n_],

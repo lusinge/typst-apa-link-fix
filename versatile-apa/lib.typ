@@ -193,7 +193,7 @@
 
   set figure(
     gap: double-spacing,
-    placement: none,
+    placement: auto,
   )
 
   show figure.caption: it => {
@@ -205,7 +205,14 @@
     ]
   }
 
-  set table(stroke: none)
+  set table(
+    stroke: (x, y) => if y == 0 {
+      (
+        top: (thickness: 1pt, dash: "solid"),
+        bottom: (thickness: 1pt, dash: "solid"),
+      )
+    },
+  )
 
   set list(
     marker: ([•], [◦]),

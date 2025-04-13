@@ -185,32 +185,32 @@
     leading: double-spacing,
   )
 
-  show figure: set figure.caption(position: top)
-
   show table.cell: set par(leading: 1em)
 
   show figure: set block(breakable: true)
 
-  show figure: it => {
-    it.caption
-    align(center, it.body)
-  }
-
   set figure(
     gap: double-spacing,
-    placement: none,
+    placement: auto,
   )
 
+  set figure.caption(separator: parbreak(), position: top)
+  show figure.caption: set align(left)
+  show figure.caption: set par(first-line-indent: 0em)
   show figure.caption: it => {
-    set par(first-line-indent: 0in)
-    align(left)[
-      *#it.supplement #context it.counter.display(it.numbering)*
-
-      #emph(it.body)
-    ]
+    strong[#it.supplement #context it.counter.display(it.numbering)]
+    parbreak()
+    emph(it.body)
   }
-
-  set table(stroke: none)
+  
+  set table(
+    stroke: (x, y) => if y == 0 {
+      (
+        top: (thickness: 1pt, dash: "solid"),
+        bottom: (thickness: 1pt, dash: "solid"),
+      )
+    },
+  )
 
   set list(
     marker: ([•], [◦]),
